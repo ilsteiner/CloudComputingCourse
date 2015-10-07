@@ -11,20 +11,17 @@ public class PlantDAO {
     private Statement statement = null;
     private ResultSet resultSet = null;
 
-    public void writeRow(String name,String description,Double height) throws Exception {
+    public void writeRow(String name, String description, Double height) throws Exception {
         // This will load the MySQL driver, each DB has its own driver
         Class.forName("com.mysql.jdbc.Driver");
         // Setup the connection with the DB
         connect = DriverManager
                 .getConnection("jdbc:mysql://localhost/PlantDB?" + "user=user&password=user");
-
         // Statements allow to issue SQL queries to the database
         PreparedStatement preparedStatement = connect.prepareStatement("insert into PlantDB.Flowers (name,description,height) VALUES(?,?,?)");
-
         preparedStatement.setString(1, name);
         preparedStatement.setString(2, description);
         preparedStatement.setDouble(3, height);
-
         preparedStatement.executeUpdate();
     }
 
@@ -37,14 +34,12 @@ public class PlantDAO {
                     .getConnection("jdbc:mysql://localhost/PlantDB?" + "user=user&password=user");
                     /*.getConnection("jdbc:mysql://jelenainst.c5cxb8gzb9wo.us-east-1.rds.amazonaws.com:3306/jaca?" +
                             "user=jelena&password=jelena123");*/
-
             // Statements allow to issue SQL queries to the database
             statement = connect.createStatement();
             // Result set get the result of the SQL query
             resultSet = statement
                     .executeQuery("select * from PlantDB.Flowers");
             writeResultSet(resultSet);
-
         } catch (Exception e) {
             throw e;
         } finally {
@@ -56,7 +51,7 @@ public class PlantDAO {
     private void writeResultSet(ResultSet resultSet) throws SQLException {
         // ResultSet is initially before the first data set
         while (resultSet.next()) {
-            for(int i = 1; i <= resultSet.getMetaData().getColumnCount();i++){
+            for (int i = 1; i <= resultSet.getMetaData().getColumnCount(); i++) {
                 System.out.println(resultSet.getMetaData().getColumnName(i) + ": " + resultSet.getString(i));
             }
         }
@@ -68,17 +63,13 @@ public class PlantDAO {
             if (resultSet != null) {
                 resultSet.close();
             }
-
             if (statement != null) {
                 statement.close();
             }
-
             if (connect != null) {
                 connect.close();
             }
         } catch (Exception e) {
-
         }
     }
-
 } 

@@ -15,7 +15,7 @@ public class MySQLAccess {
         Double height;
         String cont = "Y";
 
-        while(cont.toUpperCase().equals("YES") || cont.toUpperCase().equals("Y")){
+        while (cont.toUpperCase().equals("YES") || cont.toUpperCase().equals("Y")) {
             System.out.println("Enter a plant name:");
             name = in.readLine();
 
@@ -25,7 +25,7 @@ public class MySQLAccess {
             System.out.println("Enter the average height for the plant:");
             height = Double.parseDouble(in.readLine());
 
-            dao.writeRow(name,description,height);
+            dao.writeRow(name, description, height);
 
             System.out.println("Do you want to enter another plant?");
             cont = in.readLine();
