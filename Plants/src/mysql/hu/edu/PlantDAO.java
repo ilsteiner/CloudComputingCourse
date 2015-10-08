@@ -11,6 +11,26 @@ public class PlantDAO {
     private Statement statement = null;
     private ResultSet resultSet = null;
 
+    public PlantDAO() {
+        super();
+        // This will load the MySQL driver, each DB has its own driver
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+
+            // Setup the connection with the DB
+            connect = DriverManager
+                    .getConnection("jdbc:mysql://localhost/PlantDB?" + "user=user&password=user");
+
+            PreparedStatement preparedStatement = connect.prepareStatement("CREATE TABLE IF NOT EXISTS PlantDB.Flowers (id INTEGER PRIMARY KEY AUTO_INCREMENT,name VARCHAR(255),description VARCHAR(255),height DECIMAL(6,2))");
+
+            preparedStatement.executeUpdate();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void writeRow(String name, String description, Double height) throws Exception {
         // This will load the MySQL driver, each DB has its own driver
         Class.forName("com.mysql.jdbc.Driver");
@@ -23,6 +43,26 @@ public class PlantDAO {
         preparedStatement.setString(2, description);
         preparedStatement.setDouble(3, height);
         preparedStatement.executeUpdate();
+    }
+
+    public void deleteRow(int id){
+        try {
+            // This will load the MySQL driver, each DB has its own driver
+            Class.forName("com.mysql.jdbc.Driver");
+            // Setup the connection with the DB
+            connect = DriverManager
+                    .getConnection("jdbc:mysql://localhost/PlantDB?" + "user=user&password=user");
+
+            PreparedStatement preparedStatement = connect.prepareStatement("DELETE FROM PlantDB.Flowers where id = ?");
+
+            preparedStatement.setInt(1,id);
+
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     public void readDataBase() throws Exception {
@@ -45,7 +85,6 @@ public class PlantDAO {
         } finally {
             close();
         }
-
     }
 
     private void writeResultSet(ResultSet resultSet) throws SQLException {

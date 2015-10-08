@@ -6,7 +6,6 @@ import java.io.InputStreamReader;
 public class MySQLAccess {
     public static void main(String[] args) throws Exception {
         PlantDAO dao = new PlantDAO();
-//        dao.readDataBase();
 
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
@@ -29,6 +28,21 @@ public class MySQLAccess {
 
             System.out.println("Do you want to enter another plant?");
             cont = in.readLine();
+        }
+
+        dao.readDataBase();
+
+        cont = "Y";
+
+        while (cont.toUpperCase().equals("YES") || cont.toUpperCase().equals("Y")) {
+            System.out.println("Do you want to delete a record?");
+
+            cont = in.readLine();
+
+            if(cont.toUpperCase().equals("YES") || cont.toUpperCase().equals("Y")){
+                System.out.println("Enter the ID of the row to record to delete:");
+                dao.deleteRow(Integer.parseInt(in.readLine()));
+            }
         }
 
         dao.readDataBase();
