@@ -19,7 +19,7 @@ public class PlantDAO {
 
             // Setup the connection with the DB
             connect = DriverManager
-                    .getConnection("jdbc:mysql://localhost/PlantDB?" + "user=user&password=user");
+                    .getConnection("jdbc:mysql://isteiner-e90.c7qccqw6h0ez.us-east-1.rds.amazonaws.com:3306/PlantDB?" + "user=root&password=rootpassword");
 
             PreparedStatement preparedStatement = connect.prepareStatement("CREATE TABLE IF NOT EXISTS PlantDB.Flowers (id INTEGER PRIMARY KEY AUTO_INCREMENT,name VARCHAR(255),description VARCHAR(255),height DECIMAL(6,2))");
 
@@ -36,7 +36,7 @@ public class PlantDAO {
         Class.forName("com.mysql.jdbc.Driver");
         // Setup the connection with the DB
         connect = DriverManager
-                .getConnection("jdbc:mysql://localhost/PlantDB?" + "user=user&password=user");
+                .getConnection("jdbc:mysql://isteiner-e90.c7qccqw6h0ez.us-east-1.rds.amazonaws.com:3306/PlantDB?" + "user=root&password=rootpassword");
         // Statements allow to issue SQL queries to the database
         PreparedStatement preparedStatement = connect.prepareStatement("insert into PlantDB.Flowers (name,description,height) VALUES(?,?,?)");
         preparedStatement.setString(1, name);
@@ -51,7 +51,7 @@ public class PlantDAO {
             Class.forName("com.mysql.jdbc.Driver");
             // Setup the connection with the DB
             connect = DriverManager
-                    .getConnection("jdbc:mysql://localhost/PlantDB?" + "user=user&password=user");
+                    .getConnection("jdbc:mysql://isteiner-e90.c7qccqw6h0ez.us-east-1.rds.amazonaws.com:3306/PlantDB?" + "user=root&password=rootpassword");
 
             PreparedStatement preparedStatement = connect.prepareStatement("DELETE FROM PlantDB.Flowers where id = ?");
 
@@ -71,9 +71,7 @@ public class PlantDAO {
             Class.forName("com.mysql.jdbc.Driver");
             // Setup the connection with the DB
             connect = DriverManager
-                    .getConnection("jdbc:mysql://localhost/PlantDB?" + "user=user&password=user");
-                    /*.getConnection("jdbc:mysql://jelenainst.c5cxb8gzb9wo.us-east-1.rds.amazonaws.com:3306/jaca?" +
-                            "user=jelena&password=jelena123");*/
+                    .getConnection("jdbc:mysql://isteiner-e90.c7qccqw6h0ez.us-east-1.rds.amazonaws.com:3306/PlantDB?" + "user=root&password=rootpassword");
             // Statements allow to issue SQL queries to the database
             statement = connect.createStatement();
             // Result set get the result of the SQL query
