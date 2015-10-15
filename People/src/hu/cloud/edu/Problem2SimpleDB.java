@@ -26,14 +26,9 @@ public class Problem2SimpleDB {
 
     public static void main(String[] args) throws Exception {
 
-    	 /*
-         * The ProfileCredentialsProvider will return your [ZoranJavaSDK]
-         * credential profile by reading from the credentials file located at
-         * (C:\\Users\\073621\\.aws\\credentials).
-         */
         AWSCredentials credentials = null;
         try {
-            credentials = new ProfileCredentialsProvider("ZoranJavaDSDK").getCredentials();
+            credentials = new ProfileCredentialsProvider("creds").getCredentials();
         } catch (Exception e) {
             throw new AmazonClientException(
                     "Cannot load the credentials from the credential profiles file. " +
@@ -51,7 +46,7 @@ public class Problem2SimpleDB {
 
         try {
             // Create a domain
-            String myDomain = "Store";
+            String myDomain = "People";
             System.out.println("Creating domain called " + myDomain + ".\n");
             sdb.createDomain(new CreateDomainRequest(myDomain));
 
@@ -126,55 +121,55 @@ public class Problem2SimpleDB {
     private static List<ReplaceableItem> createSampleData() {
         List<ReplaceableItem> sampleData = new ArrayList<ReplaceableItem>();
 
-        sampleData.add(new ReplaceableItem("Item_01").withAttributes(
-                new ReplaceableAttribute("Category", "Clothes", true),
-                new ReplaceableAttribute("Subcategory", "Sweater", true),
-                new ReplaceableAttribute("Name", "Cathair Sweater", true),
-                new ReplaceableAttribute("Color", "Siamese", true),
-                new ReplaceableAttribute("Size", "Small", true),
-                new ReplaceableAttribute("Size", "Medium", true),
-                new ReplaceableAttribute("Size", "Large", true)));
-
-        sampleData.add(new ReplaceableItem("Item_02").withAttributes(
-                new ReplaceableAttribute("Category", "Clothes", true),
-                new ReplaceableAttribute("Subcategory","Pants", true),
-                new ReplaceableAttribute("Name", "Designer Jeans", true),
-                new ReplaceableAttribute("Color", "Paisley Acid Wash", true),
-                new ReplaceableAttribute("Size", "30x32", true),
-                new ReplaceableAttribute("Size", "32x32", true),
-                new ReplaceableAttribute("Size", "32x34", true)));
-
-        sampleData.add(new ReplaceableItem("Item_03").withAttributes(
-                new ReplaceableAttribute("Category", "Clothes", true),
-                new ReplaceableAttribute("Subcategory", "Pants", true),
-                new ReplaceableAttribute("Name", "Sweatpants", true),
-                new ReplaceableAttribute("Color", "Blue", true),
-                new ReplaceableAttribute("Color", "Yellow", true),
-                new ReplaceableAttribute("Color", "Pink", true),
-                new ReplaceableAttribute("Size", "Large", true),
-                new ReplaceableAttribute("Year", "2006", true),
-                new ReplaceableAttribute("Year", "2007", true)));
-
-        sampleData.add(new ReplaceableItem("Item_04").withAttributes(
-                new ReplaceableAttribute("Category", "Car Parts", true),
-                new ReplaceableAttribute("Subcategory", "Engine", true),
-                new ReplaceableAttribute("Name", "Turbos", true),
-                new ReplaceableAttribute("Make", "Audi", true),
-                new ReplaceableAttribute("Model", "S4", true),
-                new ReplaceableAttribute("Year", "2000", true),
-                new ReplaceableAttribute("Year", "2001", true),
-                new ReplaceableAttribute("Year", "2002", true)));
-
-        sampleData.add(new ReplaceableItem("Item_05").withAttributes(
-                new ReplaceableAttribute("Category", "Car Parts", true),
-                new ReplaceableAttribute("Subcategory", "Emissions", true),
-                new ReplaceableAttribute("Name", "O2 Sensor", true),
-                new ReplaceableAttribute("Make", "Audi", true),
-                new ReplaceableAttribute("Model", "S4", true),
-                new ReplaceableAttribute("Year", "2000", true),
-                new ReplaceableAttribute("Year", "2001", true),
-                new ReplaceableAttribute("Year", "2002", true)));
-
+        //Create Person objects and immediately add them to the sample dataset
+        sampleData.add(new Person("Hugh",
+        							"Jackman",
+        							"The Prestige",
+        							"https://s3.amazonaws.com/e90-isteiner-people/stars/images/hughJackman.jpg",
+        							"https://s3.amazonaws.com/e90-isteiner-people/stars/resumes/jackmanResume.docx")
+        					.getReplaceableItem());
+        
+        sampleData.add(new Person("Ian",
+				"Mckellen",
+				"The Lord of the Rings: The Fellowship of the Ring",
+				"https://s3.amazonaws.com/e90-isteiner-people/stars/images/ianMckellen.jpg",
+				"https://s3.amazonaws.com/e90-isteiner-people/stars/resumes/mckellenResume.docx")
+		.getReplaceableItem());
+        
+        sampleData.add(new Person("Tuppence",
+				"Middleton",
+				"The Imitation Game",
+				"https://s3.amazonaws.com/e90-isteiner-people/stars/images/tuppenceMiddleton.jpg",
+				"https://s3.amazonaws.com/e90-isteiner-people/stars/resumes/middletonResume.docx")
+		.getReplaceableItem());
+        
+        sampleData.add(new NobelLaureate("Angus",
+				"Deaton",
+				"The Terminator",
+				"https://s3.amazonaws.com/e90-isteiner-people/nobels/images/angusDeaton.jpg",
+				"https://s3.amazonaws.com/e90-isteiner-people/nobels/resumes/deatonResume.docx",
+				2015,
+				"Economic Sciences")
+		.getReplaceableItem());
+        
+        sampleData.add(new NobelLaureate("Kajita",
+				"Takaaki",
+				"The Sound of Music",
+				"https://s3.amazonaws.com/e90-isteiner-people/nobels/images/kajitaTakaaki.jpg",
+				"https://s3.amazonaws.com/e90-isteiner-people/nobels/resumes/takaakiResume.docx",
+				2015,
+				"Physics")
+		.getReplaceableItem());
+        
+        sampleData.add(new NobelLaureate("Svetlana",
+				"Alexievich",
+				"The Great Escape",
+				"https://s3.amazonaws.com/e90-isteiner-people/nobels/images/svetlanaAlexievich.jpg",
+				"https://s3.amazonaws.com/e90-isteiner-people/nobels/resumes/alexievichResume.docx",
+				2015,
+				"Literature")
+		.getReplaceableItem());
+        
         return sampleData;
     }
 }
