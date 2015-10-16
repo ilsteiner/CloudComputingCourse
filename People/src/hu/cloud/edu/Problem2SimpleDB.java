@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
-import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
@@ -16,6 +15,8 @@ import com.amazonaws.services.simpledb.model.CreateDomainRequest;
 import com.amazonaws.services.simpledb.model.DeleteAttributesRequest;
 import com.amazonaws.services.simpledb.model.DeleteDomainRequest;
 import com.amazonaws.services.simpledb.model.Item;
+import com.amazonaws.services.simpledb.model.ListDomainsRequest;
+import com.amazonaws.services.simpledb.model.ListDomainsResult;
 import com.amazonaws.services.simpledb.model.PutAttributesRequest;
 import com.amazonaws.services.simpledb.model.ReplaceableAttribute;
 import com.amazonaws.services.simpledb.model.ReplaceableItem;
@@ -25,18 +26,7 @@ import com.amazonaws.services.simpledb.model.SelectRequest;
 public class Problem2SimpleDB {
 
     public static void main(String[] args) throws Exception {
-
-        AWSCredentials credentials = null;
-        try {
-            credentials = new ProfileCredentialsProvider("creds").getCredentials();
-        } catch (Exception e) {
-            throw new AmazonClientException(
-                    "Cannot load the credentials from the credential profiles file. " +
-                    "Please make sure that your credentials file is at the correct " +
-                    "location (C:\\Users\\073621\\.aws\\credentials), and is in valid format.",
-                    e);
-        }
-        AmazonSimpleDB sdb = new AmazonSimpleDBClient(credentials);
+        AmazonSimpleDB sdb = new AmazonSimpleDBClient();
 		Region usEast1 = Region.getRegion(Regions.US_EAST_1);
 		sdb.setRegion(usEast1);
 
@@ -47,6 +37,11 @@ public class Problem2SimpleDB {
         try {
             // Create a domain
             String myDomain = "People";
+            
+            if(deleteDomainIfExists(sdb,myDomain)){
+            	System.out.println(myDomain + " domain already exists, deleting...");
+            }
+            
             System.out.println("Creating domain called " + myDomain + ".\n");
             sdb.createDomain(new CreateDomainRequest(myDomain));
 
@@ -63,44 +58,30 @@ public class Problem2SimpleDB {
 
             // Select data from a domain
             // Notice the use of backticks around the domain name in our select expression.
-            String selectExpression = "select * from `" + myDomain + "` where Category = 'Clothes'";
+            String selectExpression = "select * from `" + myDomain + "`";
             System.out.println("Selecting: " + selectExpression + "\n");
             SelectRequest selectRequest = new SelectRequest(selectExpression);
-            for (Item item : sdb.select(selectRequest).getItems()) {
-                System.out.println("  Item");
-                System.out.println("    Name: " + item.getName());
-                for (Attribute attribute : item.getAttributes()) {
-                    System.out.println("      Attribute");
-                    System.out.println("        Name:  " + attribute.getName());
-                    System.out.println("        Value: " + attribute.getValue());
-                }
-            }
-            System.out.println();
-
-            // Delete values from an attribute
-            System.out.println("Deleting Blue attributes in Item_O3.\n");
-            Attribute deleteValueAttribute = new Attribute("Color", "Blue");
-            sdb.deleteAttributes(new DeleteAttributesRequest(myDomain, "Item_03")
-                    .withAttributes(deleteValueAttribute));
-
-            // Delete an attribute and all of its values
-            System.out.println("Deleting attribute Year in Item_O3.\n");
-            sdb.deleteAttributes(new DeleteAttributesRequest(myDomain, "Item_03")
-                    .withAttributes(new Attribute().withName("Year")));
-
-            // Replace an attribute
-            System.out.println("Replacing Size of Item_03 with Medium.\n");
-            List<ReplaceableAttribute> replaceableAttributes = new ArrayList<ReplaceableAttribute>();
-            replaceableAttributes.add(new ReplaceableAttribute("Size", "Medium", true));
-            sdb.putAttributes(new PutAttributesRequest(myDomain, "Item_03", replaceableAttributes));
+            List<Item> items = sdb.select(selectRequest).getItems();
+            
+            printItems(items);
+                       
+            //Change the year one of the Nobel prizes was awarded
+            System.out.println("Changing Year Won attribute for Angus-Deaton");
+            
+            ArrayList<ReplaceableAttribute> attributes = new ArrayList<ReplaceableAttribute>();
+            
+            attributes.add(new ReplaceableAttribute("Year Won", "2016", true));
+          
+            PutAttributesRequest request = new PutAttributesRequest(myDomain,"Angus-Deaton",attributes);
+            
+            sdb.putAttributes(request);
+                                   
+            printItems(sdb.select(new SelectRequest("select * from `" + myDomain + "` where `First Name` = 'Angus'")).getItems());
 
             // Delete an item and all of its attributes
-            System.out.println("Deleting Item_03.\n");
-            sdb.deleteAttributes(new DeleteAttributesRequest(myDomain, "Item_03"));
-
-            // Delete a domain
-           // System.out.println("Deleting " + myDomain + " domain.\n");
-            // sdb.deleteDomain(new DeleteDomainRequest(myDomain));
+            System.out.println("Deleting Hugh-Jackman");
+            sdb.deleteAttributes(new DeleteAttributesRequest(myDomain, "Hugh-Jackman"));
+            
         } catch (AmazonServiceException ase) {
             System.out.println("Caught an AmazonServiceException, which means your request made it "
                     + "to Amazon SimpleDB, but was rejected with an error response for some reason.");
@@ -116,7 +97,31 @@ public class Problem2SimpleDB {
             System.out.println("Error Message: " + ace.getMessage());
         }
     }
-
+    
+    private static boolean deleteDomainIfExists(AmazonSimpleDB sdb,String domain){
+    	ListDomainsResult domains = sdb.listDomains();
+    	
+    	if(domains.getDomainNames().contains(domain)){
+    		sdb.deleteDomain(new DeleteDomainRequest(domain));
+    		return true;
+    	}
+    	else{
+    		return false;
+    	}
+    }
+    
+    private static void printItems(List<Item> items){
+    	for (Item item : items) {
+            System.out.println("  Item");
+            System.out.println("    Name: " + item.getName());
+            for (Attribute attribute : item.getAttributes()) {
+                System.out.println("      Attribute");
+                System.out.println("        Name:  " + attribute.getName());
+                System.out.println("        Value: " + attribute.getValue());
+            }
+        }
+    }
+    
     /* Creates an array of SimpleDB ReplaceableItems populated with sample data. */
     private static List<ReplaceableItem> createSampleData() {
         List<ReplaceableItem> sampleData = new ArrayList<ReplaceableItem>();
