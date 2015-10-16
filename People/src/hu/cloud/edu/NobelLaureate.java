@@ -1,5 +1,8 @@
 package hu.cloud.edu;
 
+import java.util.Map;
+
+import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.simpledb.model.ReplaceableAttribute;
 import com.amazonaws.services.simpledb.model.ReplaceableItem;
 
@@ -23,5 +26,14 @@ public class NobelLaureate extends Person {
 	            new ReplaceableAttribute("Resume", resumeURL, true),
 	            new ReplaceableAttribute("Year Won", Integer.toString(winYear), true),
 	            new ReplaceableAttribute("Field of Study", field, true));
+	}
+	
+	public Map<String, AttributeValue> getAsItem(){
+		Map<String, AttributeValue> item = super.getAsItem();
+		
+		item.put("Year Won", new AttributeValue(Integer.toString(winYear)));
+		item.put("Field of Study", new AttributeValue(field));
+		
+		return item;
 	}
 }

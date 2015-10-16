@@ -1,29 +1,22 @@
 package hu.cloud.edu;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
-import com.amazonaws.auth.AWSCredentials;
-import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
-import com.amazonaws.services.dynamodbv2.model.AttributeDefinition;
+import com.amazonaws.services.dynamodbv2.document.DynamoDB;
+import com.amazonaws.services.dynamodbv2.document.spec.UpdateItemSpec;
+import com.amazonaws.services.dynamodbv2.document.utils.NameMap;
+import com.amazonaws.services.dynamodbv2.document.utils.ValueMap;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
-import com.amazonaws.services.dynamodbv2.model.ComparisonOperator;
-import com.amazonaws.services.dynamodbv2.model.Condition;
-import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
 import com.amazonaws.services.dynamodbv2.model.DescribeTableRequest;
-import com.amazonaws.services.dynamodbv2.model.KeySchemaElement;
-import com.amazonaws.services.dynamodbv2.model.KeyType;
-import com.amazonaws.services.dynamodbv2.model.ProvisionedThroughput;
 import com.amazonaws.services.dynamodbv2.model.PutItemRequest;
 import com.amazonaws.services.dynamodbv2.model.PutItemResult;
-import com.amazonaws.services.dynamodbv2.model.ScalarAttributeType;
 import com.amazonaws.services.dynamodbv2.model.ScanRequest;
-import com.amazonaws.services.dynamodbv2.model.ScanResult;
 import com.amazonaws.services.dynamodbv2.model.TableDescription;
 import com.amazonaws.services.dynamodbv2.util.Tables;
 
@@ -65,9 +58,9 @@ public class Problem2DynamoDB {
          * credential profile by reading from the credentials file located at
          * (C:\\Users\\073621\\.aws\\credentials).
          */
-        AWSCredentials credentials = null;
+        //AWSCredentials credentials = null;
         try {
-            credentials = new ProfileCredentialsProvider("ZoranJavaDSDK").getCredentials();
+            //credentials = new ProfileCredentialsProvider("ZoranJavaDSDK").getCredentials();
         } catch (Exception e) {
             throw new AmazonClientException(
                     "Cannot load the credentials from the credential profiles file. " +
@@ -75,7 +68,7 @@ public class Problem2DynamoDB {
                     "location (C:\\Users\\073621\\.aws\\credentials), and is in valid format.",
                     e);
         }
-        dynamoDB = new AmazonDynamoDBClient(credentials);
+        dynamoDB = new AmazonDynamoDBClient();
         Region usWest2 = Region.getRegion(Regions.US_EAST_1);
         dynamoDB.setRegion(usWest2);
     }
@@ -84,14 +77,14 @@ public class Problem2DynamoDB {
         init();
 
         try {
-            String tableName = "my-favorite-movies-table";
+            String tableName = "CELEBRITIES_SDK";
 
             // Create table if it does not exist yet
             if (Tables.doesTableExist(dynamoDB, tableName)) {
                 System.out.println("Table " + tableName + " is already ACTIVE");
-            } else {
+            } else {            	
                 // Create a table with a primary hash key named 'name', which holds a string
-                CreateTableRequest createTableRequest = new CreateTableRequest().withTableName(tableName)
+                /*CreateTableRequest createTableRequest = new CreateTableRequest().withTableName(tableName)
                     .withKeySchema(new KeySchemaElement().withAttributeName("name").withKeyType(KeyType.HASH))
                     .withAttributeDefinitions(new AttributeDefinition().withAttributeName("name").withAttributeType(ScalarAttributeType.S))
                     .withProvisionedThroughput(new ProvisionedThroughput().withReadCapacityUnits(1L).withWriteCapacityUnits(1L));
@@ -100,7 +93,7 @@ public class Problem2DynamoDB {
 
                 // Wait for it to become active
                 System.out.println("Waiting for " + tableName + " to become ACTIVE...");
-                Tables.awaitTableToBecomeActive(dynamoDB, tableName);
+                Tables.awaitTableToBecomeActive(dynamoDB, tableName);*/
             }
 
             // Describe our new table
@@ -108,19 +101,37 @@ public class Problem2DynamoDB {
             TableDescription tableDescription = dynamoDB.describeTable(describeTableRequest).getTable();
             System.out.println("Table Description: " + tableDescription);
 
-            // Add an item
-            Map<String, AttributeValue> item = newItem("Bill & Ted's Excellent Adventure", 1989, "****", "James", "Sara");
-            PutItemRequest putItemRequest = new PutItemRequest(tableName, item);
-            PutItemResult putItemResult = dynamoDB.putItem(putItemRequest);
-            System.out.println("Result: " + putItemResult);
-
-            // Add another item
-            item = newItem("Airplane", 1980, "*****", "James", "Billy Bob");
-            putItemRequest = new PutItemRequest(tableName, item);
-            putItemResult = dynamoDB.putItem(putItemRequest);
-            System.out.println("Result: " + putItemResult);
-
-            // Scan items for movies with a year attribute greater than 1985
+            // Add the items
+            for (Map<String, AttributeValue> item : createSampleDate()) {
+            	System.out.println("Putting item: " + item.get("name").toString());
+            	PutItemRequest putItemRequest = new PutItemRequest(tableName, item);
+                PutItemResult putItemResult = dynamoDB.putItem(putItemRequest);
+                System.out.println("Result: " + putItemResult);
+			}
+            
+            ScanRequest consoleScan = new ScanRequest("CELEBRITIES_CONSOLE");
+            ScanRequest sdkScan = new ScanRequest("CELEBRITIES_SDK");
+            
+            System.out.println("See what's in the console table:");
+            System.out.println(dynamoDB.scan(consoleScan));
+            
+            System.out.println("See what's in the SDK table:");
+            System.out.println(dynamoDB.scan(sdkScan));
+            
+            System.out.println("Change the year for Angus Deaton");  
+                        
+            UpdateItemSpec updateItemSpec = new UpdateItemSpec()
+            		.withPrimaryKey("name","Angus-Deaton")
+            		.withUpdateExpression("set #y = :val")
+            		.withNameMap(new NameMap().with("#y", "Year Won"))
+            		.withValueMap(new ValueMap().withNumber(":val", 2016));
+            
+            new DynamoDB(dynamoDB).getTable(tableName).updateItem(updateItemSpec);
+            
+            System.out.println("See the changes in the SDK table:");
+            System.out.println(dynamoDB.scan(sdkScan));
+            		
+/*            // Scan items for movies with a year attribute greater than 1985
             HashMap<String, Condition> scanFilter = new HashMap<String, Condition>();
             Condition condition = new Condition()
                 .withComparisonOperator(ComparisonOperator.GT.toString())
@@ -128,7 +139,7 @@ public class Problem2DynamoDB {
             scanFilter.put("year", condition);
             ScanRequest scanRequest = new ScanRequest(tableName).withScanFilter(scanFilter);
             ScanResult scanResult = dynamoDB.scan(scanRequest);
-            System.out.println("Result: " + scanResult);
+            System.out.println("Result: " + scanResult);*/
 
         } catch (AmazonServiceException ase) {
             System.out.println("Caught an AmazonServiceException, which means your request made it "
@@ -145,15 +156,58 @@ public class Problem2DynamoDB {
             System.out.println("Error Message: " + ace.getMessage());
         }
     }
-
-    private static Map<String, AttributeValue> newItem(String name, int year, String rating, String... fans) {
-        Map<String, AttributeValue> item = new HashMap<String, AttributeValue>();
-        item.put("name", new AttributeValue(name));
-        item.put("year", new AttributeValue().withN(Integer.toString(year)));
-        item.put("rating", new AttributeValue(rating));
-        item.put("fans", new AttributeValue().withSS(fans));
-
-        return item;
+    
+    public static ArrayList<Map<String, AttributeValue>> createSampleDate(){
+    	ArrayList<Person> people = new ArrayList<>();
+    	ArrayList<Map<String, AttributeValue>> list = new ArrayList<>();
+    	
+    	people.add(new Person("Hugh",
+				"Jackman",
+				"The Prestige",
+				"https://s3.amazonaws.com/e90-isteiner-people/stars/images/hughJackman.jpg",
+				"https://s3.amazonaws.com/e90-isteiner-people/stars/resumes/jackmanResume.docx"));
+    	
+    	people.add(new Person("Ian",
+				"Mckellen",
+				"The Lord of the Rings: The Fellowship of the Ring",
+				"https://s3.amazonaws.com/e90-isteiner-people/stars/images/ianMckellen.jpg",
+				"https://s3.amazonaws.com/e90-isteiner-people/stars/resumes/mckellenResume.docx"));
+    	
+    	people.add(new Person("Tuppence",
+				"Middleton",
+				"The Imitation Game",
+				"https://s3.amazonaws.com/e90-isteiner-people/stars/images/tuppenceMiddleton.jpg",
+				"https://s3.amazonaws.com/e90-isteiner-people/stars/resumes/middletonResume.docx"));
+    	
+    	people.add(new NobelLaureate("Angus",
+				"Deaton",
+				"The Terminator",
+				"https://s3.amazonaws.com/e90-isteiner-people/nobels/images/angusDeaton.jpg",
+				"https://s3.amazonaws.com/e90-isteiner-people/nobels/resumes/deatonResume.docx",
+				2015,
+				"Economic Sciences"));
+    	
+    	people.add(new NobelLaureate("Kajita",
+				"Takaaki",
+				"The Sound of Music",
+				"https://s3.amazonaws.com/e90-isteiner-people/nobels/images/kajitaTakaaki.jpg",
+				"https://s3.amazonaws.com/e90-isteiner-people/nobels/resumes/takaakiResume.docx",
+				2015,
+				"Physics"));
+    	
+    	people.add(new NobelLaureate("Svetlana",
+				"Alexievich",
+				"The Great Escape",
+				"https://s3.amazonaws.com/e90-isteiner-people/nobels/images/svetlanaAlexievich.jpg",
+				"https://s3.amazonaws.com/e90-isteiner-people/nobels/resumes/alexievichResume.docx",
+				2015,
+				"Literature"));
+    	
+    	for (Person person : people) {
+			list.add(person.getAsItem());
+		}
+    	
+    	return list;
     }
 
 }

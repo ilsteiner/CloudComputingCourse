@@ -1,5 +1,9 @@
 package hu.cloud.edu;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.simpledb.model.ReplaceableAttribute;
 import com.amazonaws.services.simpledb.model.ReplaceableItem;
 
@@ -29,6 +33,17 @@ public class Person {
 	            new ReplaceableAttribute("Popular Movie", movie, true),
 	            new ReplaceableAttribute("Image", imageURL, true),
 	            new ReplaceableAttribute("Resume", resumeURL, true));
+	}
+	
+	public Map<String, AttributeValue> getAsItem(){
+		Map<String, AttributeValue> item = new HashMap<String, AttributeValue>();
+		
+		item.put("name", new AttributeValue(getKey()));
+		item.put("Popular Movie", new AttributeValue(movie));
+		item.put("Image", new AttributeValue(imageURL));
+		item.put("Resume", new AttributeValue(resumeURL));
+		
+		return item;
 	}
 	
 }
