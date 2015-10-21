@@ -15,7 +15,6 @@
 package hu.cloud.edu;
 import java.util.List;
 import java.util.Map.Entry;
-
 import javax.net.ssl.SSLException;
 
 import org.aspectj.weaver.patterns.ThisOrTargetAnnotationPointcut;
@@ -42,25 +41,10 @@ import com.amazonaws.services.sqs.model.GetQueueAttributesResult;
 public class TestSQS {
 	public static final String queueName = "TestQueue";
 	public static String myQueueUrl;
-	public static AmazonSQS sqs;
+	public static AmazonSQSClient sqs;
+	public static final int sleepTime = 30000;
 
     public static void main(String[] args) throws Exception {
-
-    	/*
-         * The ProfileCredentialsProvider will return your [default]
-         * credential profile by reading from the credentials file located at
-         * (C:\\Users\\Isaac\\.aws\\credentials).
-         */
-    	/*AWSCredentials credentials = null;
-        try {
-            credentials = new ProfileCredentialsProvider("ZoranJavaDSDK").getCredentials();
-        } catch (Exception e) {
-            throw new AmazonClientException(
-                    "Cannot load the credentials from the credential profiles file. " +
-                    "Please make sure that your credentials file is at the correct " +
-                    "location (C:\\Users\\073621\\.aws\\credentials), and is in valid format.",
-                    e);
-        }*/
 
         sqs = new AmazonSQSClient();
         Region usEast1 = Region.getRegion(Regions.US_EAST_1);
@@ -86,17 +70,19 @@ public class TestSQS {
             // Send a message
             System.out.println("Sending the first message to " + queueName);
             sqs.sendMessage(new SendMessageRequest(myQueueUrl, "This is my first message"));
-            // Send another message
-            /*System.out.println("Sending the second message to " + queueName);
-            sqs.sendMessage(new SendMessageRequest(myQueueUrl, "This is my second message."));*/
             
-            //Wait to print the message until it arrives
-            while(getMessageCount() == 0){
-            	//Do nothing
+            // Send another message
+            System.out.println("Sending the second message to " + queueName);
+            sqs.sendMessage(new SendMessageRequest(myQueueUrl, "This is my second message."));
+            
+            for(int i=0;i<5;i++){
+            	int messageNum = i + 3;
+            	System.out.println("Sending the message " + messageNum + " to " + queueName);
+            	sqs.sendMessage(new SendMessageRequest(myQueueUrl, "This is message number " + messageNum));
             }
             
-            int oldCount = getMessageCount();
-            
+            printMessages(true);
+
             List<Message> messages = printMessages(true);
 
             // Delete a message
@@ -104,16 +90,20 @@ public class TestSQS {
             String messageRecieptHandle = messages.get(0).getReceiptHandle();
             sqs.deleteMessage(new DeleteMessageRequest(myQueueUrl, messageRecieptHandle));
             
-            //Wait for the delete to go through
-            while(getMessageCount() == oldCount){
-            	//Do nothing
-            }
-            
             printMessages(true);
-/*
+            
+          //Sleep for a bit to allow it to come back
+           Thread.sleep(sleepTime);
+           
+           printMessages(true);
+            
+            System.out.println(sqs.getQueueAttributes(new GetQueueAttributesRequest(myQueueUrl).withAttributeNames("All")));
+            
+            System.out.println(sqs.getQueueAttributes(new GetQueueAttributesRequest(myQueueUrl).withAttributeNames("ApproximateNumberOfMessages")));
+
             // Delete a queue
             System.out.println("Deleting the test queue.\n");
-            sqs.deleteQueue(new DeleteQueueRequest(myQueueUrl));*/
+            sqs.deleteQueue(new DeleteQueueRequest(myQueueUrl));
         } catch (AmazonServiceException ase) {
             System.out.println("Caught an AmazonServiceException, which means your request made it " +
                     "to Amazon SQS, but was rejected with an error response for some reason.");
@@ -133,22 +123,8 @@ public class TestSQS {
     public static List<Message> printMessages(){
     	// Receive messages
         System.out.println("Receiving messages from " + queueName);
-        ReceiveMessageRequest receiveMessageRequest = new ReceiveMessageRequest(myQueueUrl);
+        ReceiveMessageRequest receiveMessageRequest = new ReceiveMessageRequest(myQueueUrl).withWaitTimeSeconds(10);
         List<Message> messages = sqs.receiveMessage(receiveMessageRequest).getMessages();
-        for (Message message : messages) {
-            System.out.println("  Message");
-            System.out.println("    MessageId:     " + message.getMessageId());
-            System.out.println("    ReceiptHandle: " + message.getReceiptHandle());
-            System.out.println("    MD5OfBody:     " + message.getMD5OfBody());
-            System.out.println("    Body:          " + message.getBody());
-            for (Entry<String, String> entry : message.getAttributes().entrySet()) {
-                System.out.println("  Attribute");
-                System.out.println("    Name:  " + entry.getKey());
-                System.out.println("    Value: " + entry.getValue());
-            }
-        }
-        receiveMessageRequest = new ReceiveMessageRequest(myQueueUrl);
-        messages = sqs.receiveMessage(receiveMessageRequest).getMessages();
         for (Message message : messages) {
             System.out.println("  Message");
             System.out.println("    MessageId:     " + message.getMessageId());
