@@ -12,12 +12,13 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.StreamingOutput;
@@ -36,7 +37,7 @@ public class CustomerResource {
 
 	public CustomerResource() {}
 
-	@POST
+	@GET
 	@Consumes("application/xml")
 	public Response createCustomer(InputStream is) {
 		Customer customer = readCustomer(is);
@@ -45,6 +46,54 @@ public class CustomerResource {
 		System.out.println("Created customer " + customer.getId());
 		return Response.created(URI.create("/" + customer.getId())).build();
 
+	}
+	
+	/**
+	 * Delete the specified customer
+	 * @param customerID the customer ID of the customer to delete
+	 * @return an HTTP response indicating success or failure
+	 */
+	@DELETE
+	@Path("/{customerid}")
+	public Response deleteCustomer(@PathParam("customerid") int customerID){
+		if(customerDB.containsKey(customerID)){
+			customerDB.remove(customerID);
+			return Response.ok().build();
+		}
+		else{
+			return Response.notModified().build();
+		}
+	}
+	
+	/**
+	 * Prints the information relating to the specified customer and a specified number of customers following that one
+	 * @param customerID the customer ID with which to start
+	 * @param count the total number of customers to print
+	 */
+	@GET
+	@Path("/{customerid}")
+	public void printCustomers(@PathParam("customerid") int customerID,@QueryParam("count") Integer count){
+		for(int i=customerID;i<customerID + count;i++){
+			try {
+				outputCustomer((OutputStream) getCustomer(i),customerDB.get(i));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}	
+		}
+	}
+	
+	/**
+	 * Prints the information relating to the specified customer
+	 * @param customerID the customer ID of the customer to print
+	 */
+	@GET
+	@Path("/{customerid}")
+	public void printCustomers(@PathParam("customerid") int customerID){
+		try {
+			outputCustomer((OutputStream) getCustomer(customerID),customerDB.get(customerID));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}		
 	}
 
 	@GET
