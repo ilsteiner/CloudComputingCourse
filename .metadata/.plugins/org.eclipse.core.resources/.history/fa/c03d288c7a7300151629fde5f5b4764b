@@ -1,0 +1,10 @@
+package hu.cloud.edu;
+
+public class NobelLaureate extends Person {
+
+	public NobelLaureate(String firstName, String lastName, String movie, String imageURL, String resumeURL) {
+		super(firstName, lastName, movie, imageURL, resumeURL);
+		// TODO Auto-generated constructor stub
+	}
+
+}
