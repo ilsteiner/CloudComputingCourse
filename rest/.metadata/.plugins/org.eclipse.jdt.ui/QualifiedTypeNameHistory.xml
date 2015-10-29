@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.amazonaws.services.simpledb.model.ListDomainsRequest"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.simpledb.model.ReplaceableAttribute"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.simpledb.model.SelectRequest"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.model.CreateTableRequest"/>
+<fullyQualifiedTypeName name="hu.cloud.edu.Person"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.model.ScanRequest"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.model.AttributeValueUpdate"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.model.AttributeValue"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.model.UpdateItemRequest"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.document.spec.UpdateItemSpec"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.document.utils.NameMap"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.document.utils.ValueMap"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.dynamodbv2.document.DynamoDB"/>
+<fullyQualifiedTypeName name="javax.net.ssl.SSLException"/>
+<fullyQualifiedTypeName name="org.aspectj.weaver.patterns.ThisOrTargetAnnotationPointcut"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="java.lang.Boolean"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.sqs.AmazonSQS"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.sqs.model.Message"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.sns.AmazonSNSClient"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.sns.model.ListTopicsResult"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.sns.model.Topic"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.sns.util.Topics"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.sns.model.SubscribeRequest"/>
+<fullyQualifiedTypeName name="com.amazonaws.services.sns.model.PublishRequest"/>
+<fullyQualifiedTypeName name="javax.ws.rs.DELETE"/>
+<fullyQualifiedTypeName name="javax.ws.rs.Path"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="javax.ws.rs.PathParam"/>
+<fullyQualifiedTypeName name="com.rest.ws.Customer"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+</qualifiedTypeNameHistroy>
