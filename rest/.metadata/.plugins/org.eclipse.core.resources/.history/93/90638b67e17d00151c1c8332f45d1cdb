@@ -92,25 +92,6 @@ public class CustomerResource {
 		}
 	}
 	
-	@GET
-	@Path("{id}")
-	@Produces("application/xml")
-	public StreamingOutput getCustomer(@PathParam("id") int id,@PathParam("count") int count) {
-		Customer startAt = customerDB.get(id);
-		if (startAt == null) {
-			throw new WebApplicationException(Response.Status.NOT_FOUND);
-		}
-		else{
-			return new StreamingOutput() {
-				public void write(OutputStream outputStream) throws IOException, WebApplicationException {
-					for(int i=startAt.getId();i<startAt.getId() + count;i++){
-						outputCustomer(outputStream, customerDB.get(i));
-					}
-				}
-			};
-		}
-	}
-	
 	
 	protected void outputCustomer(OutputStream os, Customer cust) throws IOException {
 		PrintStream writer = new PrintStream(os);

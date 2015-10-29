@@ -120,3 +120,7 @@
 127.0.0.1 - - [28/Oct/2015:22:03:32 -0400] "GET /rest/customers/1 HTTP/1.1" 200 238
 127.0.0.1 - - [28/Oct/2015:22:03:32 -0400] "PUT /rest/customers/1 HTTP/1.1" 204 -
 127.0.0.1 - - [28/Oct/2015:22:03:32 -0400] "GET /rest/customers/1 HTTP/1.1" 200 238
+127.0.0.1 - - [28/Oct/2015:22:04:41 -0400] "POST /rest/customers HTTP/1.1" 201 -
+127.0.0.1 - - [28/Oct/2015:22:04:41 -0400] "GET /rest/customers/1 HTTP/1.1" 200 235
+127.0.0.1 - - [28/Oct/2015:22:04:41 -0400] "PUT /rest/customers/1 HTTP/1.1" 204 -
+127.0.0.1 - - [28/Oct/2015:22:04:41 -0400] "GET /rest/customers/1 HTTP/1.1" 200 238
