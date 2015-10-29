@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;email&apos; in &apos;hu.cloud.edu.CreateTopic.subscribe(...)&apos; to &apos;dest&apos;&#x0D;&#x0A;- Original project: &apos;TestSQS&apos;&#x0D;&#x0A;- Original element: &apos;hu.cloud.edu.CreateTopic.subscribe(AmazonSNS, String, String).email&apos;&#x0D;&#x0A;- Renamed element: &apos;email&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;email&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;hu.cloud.edu{CreateTopic.java[CreateTopic~subscribe~QAmazonSNS;~QString;~QString;@email!2372!2383!2379!2383!QString;!0!true" name="dest" references="true" stamp="1445450786208" version="1.0"/>
+</session>
