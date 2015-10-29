@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -77,6 +78,18 @@ public class CustomerResource {
 		current.setState(update.getState());
 		current.setZip(update.getZip());
 		current.setCountry(update.getCountry());
+	}
+	
+	@DELETE
+	@Path("{id}")
+	public void deleteCustomer(@PathParam("id") int id,InputStream is){
+		Customer toDelete = readCustomer(is);
+		if(toDelete == null || !customerDB.containsKey(toDelete.getId())){
+			throw new WebApplicationException(Response.Status.NOT_FOUND);
+		}
+		else{
+			customerDB.remove(toDelete.getId());
+		}
 	}
 	
 	
