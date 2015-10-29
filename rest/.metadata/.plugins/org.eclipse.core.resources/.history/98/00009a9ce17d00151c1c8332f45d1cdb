@@ -13,14 +13,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
-import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.StreamingOutput;
@@ -53,28 +51,16 @@ public class CustomerResource {
 	@GET
 	@Path("{id}")
 	@Produces("application/xml")
-	public StreamingOutput getCustomer(@PathParam("id") int id,@DefaultValue("1") @QueryParam("count") int count) {
+	public StreamingOutput getCustomer(@PathParam("id") int id) {
 		final Customer customer = customerDB.get(id);
 		if (customer == null) {
 			throw new WebApplicationException(Response.Status.NOT_FOUND);
 		}
-		
-		else if(count > 1){
-			return new StreamingOutput() {
-				public void write(OutputStream outputStream) throws IOException, WebApplicationException {
-					for(int i=customer.getId();i<customer.getId() + count;i++){
-						outputCustomer(outputStream, customerDB.get(i));
-					}
-				}
-			};
-		}
-		else{
-			return new StreamingOutput() {
-				public void write(OutputStream outputStream) throws IOException, WebApplicationException {
-					outputCustomer(outputStream, customer);
-				}
-			};
-		}
+		return new StreamingOutput() {
+			public void write(OutputStream outputStream) throws IOException, WebApplicationException {
+				outputCustomer(outputStream, customer);
+			}
+		};
 	}
 
 	@PUT
@@ -104,7 +90,27 @@ public class CustomerResource {
 		else{
 			customerDB.remove(toDelete.getId());
 		}
-	}	
+	}
+	
+	@GET
+	@Path("{id}")
+	@Produces("application/xml")
+	public StreamingOutput getCustomer(@PathParam("id") int id,@PathParam("count") int count) {
+		Customer startAt = customerDB.get(id);
+		if (startAt == null) {
+			throw new WebApplicationException(Response.Status.NOT_FOUND);
+		}
+		else{
+			return new StreamingOutput() {
+				public void write(OutputStream outputStream) throws IOException, WebApplicationException {
+					for(int i=startAt.getId();i<startAt.getId() + count;i++){
+						outputCustomer(outputStream, customerDB.get(i));
+					}
+				}
+			};
+		}
+	}
+	
 	
 	protected void outputCustomer(OutputStream os, Customer cust) throws IOException {
 		PrintStream writer = new PrintStream(os);
