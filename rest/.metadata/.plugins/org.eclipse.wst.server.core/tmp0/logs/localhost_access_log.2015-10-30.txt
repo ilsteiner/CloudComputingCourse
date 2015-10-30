@@ -1,0 +1,3 @@
+127.0.0.1 - - [30/Oct/2015:09:49:16 -0400] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [30/Oct/2015:09:49:17 -0400] "GET /rest/WEB-INF/classes/com/rest/client/CustomerResourceClient.java HTTP/1.1" 404 992
+0:0:0:0:0:0:0:1 - - [30/Oct/2015:09:49:31 -0400] "GET /rest/ HTTP/1.1" 404 -
