@@ -96,13 +96,12 @@ public class CustomerResource {
 	
 	@DELETE
 	@Path("{id}")
-	public void deleteCustomer(@PathParam("id") int id,InputStream is){
-		Customer toDelete = readCustomer(is);
-		if(toDelete == null || !customerDB.containsKey(toDelete.getId())){
+	public void deleteCustomer(@PathParam("id") int id){
+		if(!customerDB.containsKey(id)){
 			throw new WebApplicationException(Response.Status.NOT_FOUND);
 		}
 		else{
-			customerDB.remove(toDelete.getId());
+			customerDB.remove(id);
 		}
 	}	
 	
