@@ -18,7 +18,7 @@ public class CustomerResourceClient {
 			System.out.println("*** Create " + numCustomers + " new Customers ***");
 				
 			for(int i=0;i<numCustomers;i++){
-				URL postUrl = new URL("http://52.2.173.31:8080/rest/customers");
+				URL postUrl = new URL("http://52.91.36.193:8080/rest/customers");
 				HttpURLConnection connection = (HttpURLConnection) postUrl.openConnection();
 				System.out.println("opened connection...");
 				connection.setDoOutput(true);
@@ -40,7 +40,7 @@ public class CustomerResourceClient {
 			
 			System.out.println("Starting with customer id 2, print 2 customers");
 			
-			URL getUrl = new URL("http://52.2.173.31:8080/rest/customers/2?count=2");
+			URL getUrl = new URL("http://52.91.36.193:8080/rest/customers/2?count=2");
 			HttpURLConnection connection = (HttpURLConnection) getUrl.openConnection();
 			connection.setRequestMethod("GET");
 			System.out.println("Content-Type: " + connection.getContentType());
@@ -58,7 +58,7 @@ public class CustomerResourceClient {
 			
 			System.out.println("Starting with customer id 1, print 4 customers");
 			
-			getUrl = new URL("http://52.2.173.31:8080/rest/customers/1?count=4");
+			getUrl = new URL("http://52.91.36.193:8080/rest/customers/1?count=4");
 			connection = (HttpURLConnection) getUrl.openConnection();
 			connection.setRequestMethod("GET");
 			System.out.println("Content-Type: " + connection.getContentType());
@@ -76,7 +76,7 @@ public class CustomerResourceClient {
 			
 			System.out.println("Delete customer 3");
 			
-			URL deleteURL = new URL("http://52.2.173.31:8080/rest/customers/3");
+			URL deleteURL = new URL("http://52.91.36.193:8080/rest/customers/3");
 			connection = (HttpURLConnection) deleteURL.openConnection();
 			connection.setRequestMethod("DELETE");
 			System.out.println(HttpURLConnection.HTTP_OK);
@@ -87,7 +87,7 @@ public class CustomerResourceClient {
 			System.out.println("Show that customer 3 is now gone");
 			
 			try {
-				getUrl = new URL("http://52.2.173.31:8080/rest/customers/3");
+				getUrl = new URL("http://52.91.36.193:8080/rest/customers/3");
 				connection = (HttpURLConnection) getUrl.openConnection();
 				connection.setRequestMethod("GET");
 				System.out.println("Content-Type: " + connection.getContentType());
