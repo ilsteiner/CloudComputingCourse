@@ -243,3 +243,17 @@
 127.0.0.1 - - [29/Oct/2015:20:14:58 -0400] "GET /rest/customers/1?count=4 HTTP/1.1" 200 913
 127.0.0.1 - - [29/Oct/2015:20:14:58 -0400] "DELETE /rest/customers/3 HTTP/1.1" 204 -
 127.0.0.1 - - [29/Oct/2015:20:14:58 -0400] "GET /rest/customers/3 HTTP/1.1" 404 -
+127.0.0.1 - - [29/Oct/2015:20:22:36 -0400] "POST /rest/customers HTTP/1.1" 201 -
+127.0.0.1 - - [29/Oct/2015:20:22:36 -0400] "POST /rest/customers HTTP/1.1" 201 -
+127.0.0.1 - - [29/Oct/2015:20:22:36 -0400] "POST /rest/customers HTTP/1.1" 201 -
+127.0.0.1 - - [29/Oct/2015:20:22:36 -0400] "POST /rest/customers HTTP/1.1" 201 -
+127.0.0.1 - - [29/Oct/2015:20:22:36 -0400] "GET /rest/customers/2?count=2 HTTP/1.1" 500 230
+127.0.0.1 - - [29/Oct/2015:20:22:55 -0400] "GET / HTTP/1.1" 404 994
+127.0.0.1 - - [29/Oct/2015:20:23:10 -0400] "POST /rest/customers HTTP/1.1" 201 -
+127.0.0.1 - - [29/Oct/2015:20:23:10 -0400] "POST /rest/customers HTTP/1.1" 201 -
+127.0.0.1 - - [29/Oct/2015:20:23:10 -0400] "POST /rest/customers HTTP/1.1" 201 -
+127.0.0.1 - - [29/Oct/2015:20:23:10 -0400] "POST /rest/customers HTTP/1.1" 201 -
+127.0.0.1 - - [29/Oct/2015:20:23:10 -0400] "GET /rest/customers/2?count=2 HTTP/1.1" 200 458
+127.0.0.1 - - [29/Oct/2015:20:23:10 -0400] "GET /rest/customers/1?count=4 HTTP/1.1" 200 913
+127.0.0.1 - - [29/Oct/2015:20:23:10 -0400] "DELETE /rest/customers/3 HTTP/1.1" 204 -
+127.0.0.1 - - [29/Oct/2015:20:23:10 -0400] "GET /rest/customers/3 HTTP/1.1" 404 -
