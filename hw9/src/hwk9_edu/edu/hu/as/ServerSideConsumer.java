@@ -17,7 +17,7 @@ public class ServerSideConsumer {
 	
 	public static void main(String[] args) throws Exception {
 
-		AmazonSQS sqs = new AmazonSQSClient(new BasicAWSCredentials("AKIAIOQZASF6F7WWOKQQ", "+4k7FHmssjPYFxZXwMarDktJSPyUKWXlhI/mfs6s"));
+		AmazonSQS sqs = new AmazonSQSClient(new BasicAWSCredentials("", ""));
 
         Region usEast1 = Region.getRegion(Regions.US_EAST_1);
         sqs.setRegion(usEast1);
