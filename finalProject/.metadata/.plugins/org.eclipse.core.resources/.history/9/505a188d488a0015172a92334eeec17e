@@ -1,0 +1,34 @@
+package finalProject.tests;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class BucketManagement {
+
+	@Test
+	public void CreateBuckets_
+
+	@Test
+	public void CreateBuckets_NeitherInputNorOutputBucketsExist_BucketsCreated() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void CreateBuckets_OnlyInputBucketExists_OutputBucketCreated() {
+		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void CreateBuckets_OnlyOutputBucketExists_InputBucketCreated() {
+		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void CreateBuckets_BothBucketsExist_NoBucketsCreated() {
+		fail("Not yet implemented");
+	}
+
+}

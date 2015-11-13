@@ -1,0 +1,9 @@
+package finalProject.main;
+
+public class BucketManager {
+
+	public BucketManager() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

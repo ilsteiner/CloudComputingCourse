@@ -1,0 +1,14 @@
+package finalProject.tests;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class CreateBuckets_NoBucketsExist_BucketsCreated {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

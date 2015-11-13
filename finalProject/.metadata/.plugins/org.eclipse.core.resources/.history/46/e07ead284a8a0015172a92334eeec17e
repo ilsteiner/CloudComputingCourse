@@ -1,0 +1,16 @@
+package finalProject.main;
+
+import com.amazonaws.services.s3.model.Bucket;
+
+public class InputBucket extends Bucket {
+
+	public InputBucket() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public InputBucket(String name) {
+		super(name);
+		// TODO Auto-generated constructor stub
+	}
+
+}

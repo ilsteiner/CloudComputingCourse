@@ -1,0 +1,9 @@
+package finalProject.main;
+
+public class OutputBucket {
+
+	public OutputBucket() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
