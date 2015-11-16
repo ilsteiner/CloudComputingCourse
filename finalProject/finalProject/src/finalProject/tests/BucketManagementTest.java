@@ -2,6 +2,7 @@ package finalProject.tests;
 
 import static org.junit.Assert.*;
 
+import org.junit.AfterClass;
 import org.junit.Test;
 
 import finalProject.main.BucketManager;
@@ -26,6 +27,15 @@ public class BucketManagementTest {
 	
 	@Test
 	public void DestroyBuckets_BothBucketsDestroyed() {
+		BucketManager.destroyInputBucket();
+		BucketManager.destroyOutputBucket();
+		
+		assertFalse(BucketName.INPUT.toString() + " bucket should not exist",BucketManager.bucketExists(BucketName.INPUT));
+		assertFalse(BucketName.OUTPUT.toString() + " bucket should not exist",BucketManager.bucketExists(BucketName.OUTPUT));
+	}
+	
+	@AfterClass
+	public static void DestroyBuckets() {
 		BucketManager.destroyInputBucket();
 		BucketManager.destroyOutputBucket();
 	}

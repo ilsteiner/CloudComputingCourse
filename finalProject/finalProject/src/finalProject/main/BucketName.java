@@ -7,9 +7,9 @@ public enum BucketName {
 	public String toString(){
 		switch (this) {
 		case INPUT:
-			return "transcoderinput".toLowerCase();
+			return "transcoder-input-isteiner".toLowerCase();
 		case OUTPUT:
-			return "transcoderoutput".toLowerCase();
+			return "transcoder-output-isteiner".toLowerCase();
 		default:
 			return "";
 		}
