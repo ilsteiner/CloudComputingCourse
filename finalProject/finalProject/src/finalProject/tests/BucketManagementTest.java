@@ -2,65 +2,31 @@ package finalProject.tests;
 
 import static org.junit.Assert.*;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
-import com.amazonaws.services.s3.model.Bucket;
-
 import finalProject.main.BucketManager;
-import finalProject.main.InputBucket;
-import finalProject.main.OutputBucket;
+import finalProject.main.BucketName;
 
 public class BucketManagementTest {
 
 	@Test
-	public void CreateBuckets_NeitherInputNorOutputBucketsExist_BucketsCreated() {
-		BucketManager.destroyBucket(InputBucket.name);
-		BucketManager.destroyBucket(OutputBucket.name);
+	public void CreateBuckets_BucketsCreated() {
+		BucketManager.destroyInputBucket();
+		BucketManager.destroyOutputBucket();
 		
-		assertFalse(InputBucket.name + " bucket should not exist",BucketManager.bucketExists(InputBucket.name));
-		assertFalse(OutputBucket.name + " bucket should not exist",BucketManager.bucketExists(OutputBucket.name));
+		assertFalse(BucketName.INPUT.toString() + " bucket should not exist",BucketManager.bucketExists(BucketName.INPUT));
+		assertFalse(BucketName.OUTPUT.toString() + " bucket should not exist",BucketManager.bucketExists(BucketName.OUTPUT));
 		
-		InputBucket input = new InputBucket();
-		OutputBucket output = new OutputBucket();
+		BucketManager.createInputBucket();
+		BucketManager.createOutputBucket();
 		
-		assertTrue(InputBucket.name + " bucket should exist",BucketManager.bucketExists(InputBucket.name));
-		assertTrue(OutputBucket.name + " bucket should exist",BucketManager.bucketExists(OutputBucket.name));
-	}
-
-	@Test
-	public void CreateBuckets_OnlyInputBucketExists_OutputBucketCreated() {
-		fail("Not yet implemented");
+		assertTrue(BucketName.INPUT.toString() + " bucket should exist",BucketManager.bucketExists(BucketName.INPUT));
+		assertTrue(BucketName.OUTPUT.toString()+ " bucket should exist",BucketManager.bucketExists(BucketName.OUTPUT));
 	}
 	
 	@Test
-	public void CreateBuckets_OnlyOutputBucketExists_InputBucketCreated() {
-		fail("Not yet implemented");
-	}
-	
-	@Test
-	public void CreateBuckets_BothBucketsExist_NoBucketsCreated() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void DestroyBuckets_NeitherInputNorOutputBucketsExist_BucketsNotChanged() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void DestroyBuckets_OnlyInputBucketExists_InputBucketDestroyed() {
-		fail("Not yet implemented");
-	}
-	
-	@Test
-	public void DestroyBuckets_OnlyOutputBucketExists_OutputBucketDestroyed() {
-		fail("Not yet implemented");
-	}
-	
-	@Test
-	public void DestroyBuckets_BothBucketsExist_BothBucketsDestroyed() {
-		fail("Not yet implemented");
+	public void DestroyBuckets_BothBucketsDestroyed() {
+		BucketManager.destroyInputBucket();
+		BucketManager.destroyOutputBucket();
 	}
 }
