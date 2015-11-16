@@ -584,3 +584,380 @@ Command: [C:\Program Files\Java\jre1.8.0_60\bin\java.exe, -mx256m, org.infinites
 
 !ENTRY org.infinitest.eclipse 1 0 2015-11-13 16:44:49.423
 !MESSAGE Update complete. Status FAILING
+!SESSION 2015-11-16 10:33:48.859 -----------------------------------------------
+eclipse.buildId=4.5.1.M20150904-0015
+java.version=1.8.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.jface 2 0 2015-11-16 10:34:20.160
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-11-16 10:34:20.160
+!MESSAGE A conflict occurred for ALT+SHIFT+X R:
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.run,Run on Server,
+		Run the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@544733a4,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.run,Run RAP Application,
+		Run RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@522f74a1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-11-16 10:34:20.160
+!MESSAGE A conflict occurred for ALT+SHIFT+D R:
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.debug,Debug on Server,
+		Debug the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@59700156,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.debug,Debug RAP Application,
+		Debug RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1e6e29d6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2015-11-16 10:34:28.485
+!MESSAGE Starting the AWS toolkit core plugin...
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2015-11-16 10:34:31.552
+!MESSAGE Monitoring content of C:\Users\isteiner\.aws\credentials
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2015-11-16 10:34:31.590
+!MESSAGE AWS toolkit core plugin initialized after 3105 milliseconds.
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 10:34:43.737
+!MESSAGE Beans loaded: [org.springframework.context.annotation.internalConfigurationAnnotationProcessor, org.springframework.context.annotation.internalAutowiredAnnotationProcessor, org.springframework.context.annotation.internalRequiredAnnotationProcessor, org.springframework.context.annotation.internalCommonAnnotationProcessor, infinitestConfig, org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor, resultCollectorBean, coreLifecycleObserver, classFileChangeProcessor, cleanEventProcessor, coreUpdateNotifier, saveDetector, failureMediator, infinitestActivationController, markerClearingRunnable, markerClearingObserver, markerPlacer, problemMarkerRegistry, resourceLookupAdapter, slowMarkerRegistry, preferenceChangeHandler, slowTestObserver, swtEventQueue, testResultAggregator, visualStatusPresenter, coreFactory, eclipseWorkspace, infinitestCoreRegistry, javaProjectSet, workspaceResourceFinder, workspace, sourceContainer]
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-11-16 10:34:52.574
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\isteiner'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 10:36:48.981
+!MESSAGE Filter file C:\Users\isteiner\Downloads\e90\finalProject\finalProject\infinitest.filters does not exist.
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 10:36:49.058
+!MESSAGE Reloading core finalProject
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 10:36:49.065
+!MESSAGE Added core finalProject with classpath C:\Users\isteiner\Downloads\e90\finalProject\finalProject\target\classes;C:\Users\isteiner\aws-java-sdk\1.10.32\lib\aws-java-sdk-1.10.32.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\aspectj-1.6\aspectjrt.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\aspectj-1.6\aspectjweaver.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\commons-codec-1.6\commons-codec-1.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\commons-logging-1.1.3\commons-logging-1.1.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\freemarker-2.3.18\freemarker-2.3.18.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\httpcomponents-client-4.3\httpclient-4.3.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\httpcomponents-client-4.3\httpcore-4.3.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-annotations-2.5.3\jackson-annotations-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-core-2.5.3\jackson-core-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-databind-2.5.3\jackson-databind-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\javax-mail-1.4.6\javax.mail-api-1.4.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\joda-time-2.8.1\joda-time-2.8.1.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-beans-3.0.7.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-context-3.0.7.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-core-3.0.7.jar;C:\Users\isteiner\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\isteiner\.p2\pool\plugins\org.hamcrest.core_1.3.0.v201303031735.jar;C:/Users/isteiner/AppData/Local/Temp/infinitest918068478.jar
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 10:36:49.068
+!MESSAGE finalProject Files changed: [C:\Users\isteiner\Downloads\e90\finalProject\finalProject\target\classes\finalProject\main\InputBucket.class, C:\Users\isteiner\Downloads\e90\finalProject\finalProject\target\classes\finalProject\main\BucketManager.class, C:\Users\isteiner\Downloads\e90\finalProject\finalProject\target\classes\finalProject\tests\BucketManagementTest.class, C:\Users\isteiner\Downloads\e90\finalProject\finalProject\target\classes\finalProject\main\OutputBucket.class]
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 10:36:49.510
+!MESSAGE finalProject Running tests: [finalProject.tests.BucketManagementTest]
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 10:36:49.516
+!MESSAGE Launching test runner process with the following configuration:
+Directory: C:\Users\isteiner\Downloads\e90\finalProject\finalProject
+Environment: {LOCALAPPDATA=C:\Users\isteiner\AppData\Local, PROCESSOR_LEVEL=6, FP_NO_HOST_CHECK=NO, USERDOMAIN=HUDSONCENTERPC7, AWS_SECRET_ACCESS_KEY=suy6Ww5MvIZTmAtOMP8uV4/eTkr3l8rBIrZ80qpw, LOGONSERVER=\\HUDSONCENTERPC7, AWS_DEFAULT_REGION=us-east-1, JAVA_HOME=C:\Program Files\Java\jdk1.8.0_60, SESSIONNAME=Console, ALLUSERSPROFILE=C:\ProgramData, PROCESSOR_ARCHITECTURE=AMD64, PSModulePath=C:\Windows\system32\WindowsPowerShell\v1.0\Modules\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\PowerShell\Modules\, SystemDrive=C:, VS100COMNTOOLS=c:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\Tools\, APPDATA=C:\Users\isteiner\AppData\Roaming, AWS_ACCESS_KEY_ID=AKIAIVKFPKS4Q5OROPIQ, USERNAME=isteiner, ProgramFiles(x86)=C:\Program Files (x86), CommonProgramFiles=C:\Program Files\Common Files, Path=C:\Python27\;C:\Python27\Scripts;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Symantec.cloud\PlatformAgent\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files (x86)\PuTTY;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files\Microsoft SQL Server\110\DTS\Binn\;c:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Amazon\AWSCLI\;C:\Users\isteiner\AppData\Local\Programs\Python\Python35-32\Scripts\;C:\Users\isteiner\AppData\Local\Programs\Python\Python35-32\;C:\Users\isteiner\AppData\Local\Programs\Python\Launcher\, PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC, OS=Windows_NT, COMPUTERNAME=HUDSONCENTERPC7, EC2_PRIVATE_KEY=C:\.ssh\WorkCLI.pem, PROCESSOR_REVISION=170a, CommonProgramW6432=C:\Program Files\Common Files, CLASSPATH=C:\Users\isteiner\Downloads\e90\finalProject\finalProject\target\classes;C:\Users\isteiner\aws-java-sdk\1.10.32\lib\aws-java-sdk-1.10.32.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\aspectj-1.6\aspectjrt.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\aspectj-1.6\aspectjweaver.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\commons-codec-1.6\commons-codec-1.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\commons-logging-1.1.3\commons-logging-1.1.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\freemarker-2.3.18\freemarker-2.3.18.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\httpcomponents-client-4.3\httpclient-4.3.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\httpcomponents-client-4.3\httpcore-4.3.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-annotations-2.5.3\jackson-annotations-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-core-2.5.3\jackson-core-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-databind-2.5.3\jackson-databind-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\javax-mail-1.4.6\javax.mail-api-1.4.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\joda-time-2.8.1\joda-time-2.8.1.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-beans-3.0.7.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-context-3.0.7.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-core-3.0.7.jar;C:\Users\isteiner\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\isteiner\.p2\pool\plugins\org.hamcrest.core_1.3.0.v201303031735.jar;C:/Users/isteiner/AppData/Local/Temp/infinitest918068478.jar, ComSpec=C:\Windows\system32\cmd.exe, EC2_CERT=C:\.ssh\WorkCLI.pem, ProgramData=C:\ProgramData, ProgramW6432=C:\Program Files, HOMEPATH=\Users\isteiner, SystemRoot=C:\Windows, TEMP=C:\Users\isteiner\AppData\Local\Temp, HOMEDRIVE=C:, PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 23 Stepping 10, GenuineIntel, USERPROFILE=C:\Users\isteiner, TMP=C:\Users\isteiner\AppData\Local\Temp, CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files, ProgramFiles=C:\Program Files, PUBLIC=C:\Users\Public, NUMBER_OF_PROCESSORS=2, windir=C:\Windows, =::=::\}
+Command: [C:\Program Files\Java\jre1.8.0_60\bin\java.exe, -mx256m, org.infinitest.testrunner.TestRunnerProcess, org.infinitest.testrunner.JUnit4Runner, 29000]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 10:36:49.548
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 10:36:49.551
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 10:38:09.839
+!MESSAGE Update complete. Status FAILING
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 10:43:37.535
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 10:43:37.586
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 10:43:37.858
+!MESSAGE finalProject Files changed: [C:\Users\isteiner\Downloads\e90\finalProject\finalProject\target\classes\finalProject\main\BucketName.class]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 10:45:22.429
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 10:45:22.430
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 10:45:22.450
+!MESSAGE finalProject Files changed: [C:\Users\isteiner\Downloads\e90\finalProject\finalProject\target\classes\finalProject\main\BucketName.class]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 10:55:21.598
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 10:55:21.603
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 10:55:21.615
+!MESSAGE finalProject Files changed: [C:\Users\isteiner\Downloads\e90\finalProject\finalProject\target\classes\finalProject\main\BucketName.class]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 10:56:54.857
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 10:56:54.860
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 10:57:12.635
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 10:57:12.636
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 10:57:23.933
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 10:57:23.936
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 11:03:06.490
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 11:03:06.500
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 11:03:49.124
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 11:03:49.125
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 11:04:57.724
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 11:04:57.731
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 11:05:12.343
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 11:05:12.347
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 11:05:49.138
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 11:05:49.141
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 11:08:36.534
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 11:08:36.536
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 11:08:57.231
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 11:08:57.233
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:08:57.261
+!MESSAGE Files removed. Reloading finalProject
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:08:57.262
+!MESSAGE Reloading core finalProject
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:08:57.265
+!MESSAGE finalProject Files changed: [C:\Users\isteiner\Downloads\e90\finalProject\finalProject\target\classes\finalProject\main\BucketManager.class, C:\Users\isteiner\Downloads\e90\finalProject\finalProject\target\classes\finalProject\tests\BucketManagementTest.class, C:\Users\isteiner\Downloads\e90\finalProject\finalProject\target\classes\finalProject\main\BucketName.class]
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:08:57.287
+!MESSAGE finalProject Running tests: [finalProject.tests.BucketManagementTest]
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:08:57.292
+!MESSAGE Launching test runner process with the following configuration:
+Directory: C:\Users\isteiner\Downloads\e90\finalProject\finalProject
+Environment: {LOCALAPPDATA=C:\Users\isteiner\AppData\Local, PROCESSOR_LEVEL=6, FP_NO_HOST_CHECK=NO, USERDOMAIN=HUDSONCENTERPC7, AWS_SECRET_ACCESS_KEY=suy6Ww5MvIZTmAtOMP8uV4/eTkr3l8rBIrZ80qpw, LOGONSERVER=\\HUDSONCENTERPC7, AWS_DEFAULT_REGION=us-east-1, JAVA_HOME=C:\Program Files\Java\jdk1.8.0_60, SESSIONNAME=Console, ALLUSERSPROFILE=C:\ProgramData, PROCESSOR_ARCHITECTURE=AMD64, PSModulePath=C:\Windows\system32\WindowsPowerShell\v1.0\Modules\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\PowerShell\Modules\, SystemDrive=C:, VS100COMNTOOLS=c:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\Tools\, APPDATA=C:\Users\isteiner\AppData\Roaming, AWS_ACCESS_KEY_ID=AKIAIVKFPKS4Q5OROPIQ, USERNAME=isteiner, ProgramFiles(x86)=C:\Program Files (x86), CommonProgramFiles=C:\Program Files\Common Files, Path=C:\Python27\;C:\Python27\Scripts;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Symantec.cloud\PlatformAgent\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files (x86)\PuTTY;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files\Microsoft SQL Server\110\DTS\Binn\;c:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Amazon\AWSCLI\;C:\Users\isteiner\AppData\Local\Programs\Python\Python35-32\Scripts\;C:\Users\isteiner\AppData\Local\Programs\Python\Python35-32\;C:\Users\isteiner\AppData\Local\Programs\Python\Launcher\, PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC, OS=Windows_NT, COMPUTERNAME=HUDSONCENTERPC7, EC2_PRIVATE_KEY=C:\.ssh\WorkCLI.pem, PROCESSOR_REVISION=170a, CommonProgramW6432=C:\Program Files\Common Files, CLASSPATH=C:\Users\isteiner\Downloads\e90\finalProject\finalProject\target\classes;C:\Users\isteiner\aws-java-sdk\1.10.32\lib\aws-java-sdk-1.10.32.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\aspectj-1.6\aspectjrt.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\aspectj-1.6\aspectjweaver.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\commons-codec-1.6\commons-codec-1.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\commons-logging-1.1.3\commons-logging-1.1.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\freemarker-2.3.18\freemarker-2.3.18.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\httpcomponents-client-4.3\httpclient-4.3.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\httpcomponents-client-4.3\httpcore-4.3.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-annotations-2.5.3\jackson-annotations-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-core-2.5.3\jackson-core-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-databind-2.5.3\jackson-databind-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\javax-mail-1.4.6\javax.mail-api-1.4.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\joda-time-2.8.1\joda-time-2.8.1.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-beans-3.0.7.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-context-3.0.7.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-core-3.0.7.jar;C:\Users\isteiner\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\isteiner\.p2\pool\plugins\org.hamcrest.core_1.3.0.v201303031735.jar;C:/Users/isteiner/AppData/Local/Temp/infinitest918068478.jar, ComSpec=C:\Windows\system32\cmd.exe, EC2_CERT=C:\.ssh\WorkCLI.pem, ProgramData=C:\ProgramData, ProgramW6432=C:\Program Files, HOMEPATH=\Users\isteiner, SystemRoot=C:\Windows, TEMP=C:\Users\isteiner\AppData\Local\Temp, HOMEDRIVE=C:, PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 23 Stepping 10, GenuineIntel, USERPROFILE=C:\Users\isteiner, TMP=C:\Users\isteiner\AppData\Local\Temp, CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files, ProgramFiles=C:\Program Files, PUBLIC=C:\Users\Public, NUMBER_OF_PROCESSORS=2, windir=C:\Windows, =::=::\}
+Command: [C:\Program Files\Java\jre1.8.0_60\bin\java.exe, -mx256m, org.infinitest.testrunner.TestRunnerProcess, org.infinitest.testrunner.JUnit4Runner, 29227]
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:09:05.574
+!MESSAGE Update complete. Status FAILING
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 11:09:16.193
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 11:09:16.194
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:09:16.208
+!MESSAGE finalProject Files changed: [C:\Users\isteiner\Downloads\e90\finalProject\finalProject\target\classes\finalProject\tests\BucketManagementTest.class]
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:09:16.210
+!MESSAGE finalProject Running tests: [finalProject.tests.BucketManagementTest]
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:09:16.212
+!MESSAGE Launching test runner process with the following configuration:
+Directory: C:\Users\isteiner\Downloads\e90\finalProject\finalProject
+Environment: {LOCALAPPDATA=C:\Users\isteiner\AppData\Local, PROCESSOR_LEVEL=6, FP_NO_HOST_CHECK=NO, USERDOMAIN=HUDSONCENTERPC7, AWS_SECRET_ACCESS_KEY=suy6Ww5MvIZTmAtOMP8uV4/eTkr3l8rBIrZ80qpw, LOGONSERVER=\\HUDSONCENTERPC7, AWS_DEFAULT_REGION=us-east-1, JAVA_HOME=C:\Program Files\Java\jdk1.8.0_60, SESSIONNAME=Console, ALLUSERSPROFILE=C:\ProgramData, PROCESSOR_ARCHITECTURE=AMD64, PSModulePath=C:\Windows\system32\WindowsPowerShell\v1.0\Modules\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\PowerShell\Modules\, SystemDrive=C:, VS100COMNTOOLS=c:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\Tools\, APPDATA=C:\Users\isteiner\AppData\Roaming, AWS_ACCESS_KEY_ID=AKIAIVKFPKS4Q5OROPIQ, USERNAME=isteiner, ProgramFiles(x86)=C:\Program Files (x86), CommonProgramFiles=C:\Program Files\Common Files, Path=C:\Python27\;C:\Python27\Scripts;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Symantec.cloud\PlatformAgent\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files (x86)\PuTTY;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files\Microsoft SQL Server\110\DTS\Binn\;c:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Amazon\AWSCLI\;C:\Users\isteiner\AppData\Local\Programs\Python\Python35-32\Scripts\;C:\Users\isteiner\AppData\Local\Programs\Python\Python35-32\;C:\Users\isteiner\AppData\Local\Programs\Python\Launcher\, PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC, OS=Windows_NT, COMPUTERNAME=HUDSONCENTERPC7, EC2_PRIVATE_KEY=C:\.ssh\WorkCLI.pem, PROCESSOR_REVISION=170a, CommonProgramW6432=C:\Program Files\Common Files, CLASSPATH=C:\Users\isteiner\Downloads\e90\finalProject\finalProject\target\classes;C:\Users\isteiner\aws-java-sdk\1.10.32\lib\aws-java-sdk-1.10.32.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\aspectj-1.6\aspectjrt.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\aspectj-1.6\aspectjweaver.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\commons-codec-1.6\commons-codec-1.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\commons-logging-1.1.3\commons-logging-1.1.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\freemarker-2.3.18\freemarker-2.3.18.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\httpcomponents-client-4.3\httpclient-4.3.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\httpcomponents-client-4.3\httpcore-4.3.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-annotations-2.5.3\jackson-annotations-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-core-2.5.3\jackson-core-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-databind-2.5.3\jackson-databind-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\javax-mail-1.4.6\javax.mail-api-1.4.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\joda-time-2.8.1\joda-time-2.8.1.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-beans-3.0.7.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-context-3.0.7.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-core-3.0.7.jar;C:\Users\isteiner\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\isteiner\.p2\pool\plugins\org.hamcrest.core_1.3.0.v201303031735.jar;C:/Users/isteiner/AppData/Local/Temp/infinitest918068478.jar, ComSpec=C:\Windows\system32\cmd.exe, EC2_CERT=C:\.ssh\WorkCLI.pem, ProgramData=C:\ProgramData, ProgramW6432=C:\Program Files, HOMEPATH=\Users\isteiner, SystemRoot=C:\Windows, TEMP=C:\Users\isteiner\AppData\Local\Temp, HOMEDRIVE=C:, PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 23 Stepping 10, GenuineIntel, USERPROFILE=C:\Users\isteiner, TMP=C:\Users\isteiner\AppData\Local\Temp, CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files, ProgramFiles=C:\Program Files, PUBLIC=C:\Users\Public, NUMBER_OF_PROCESSORS=2, windir=C:\Windows, =::=::\}
+Command: [C:\Program Files\Java\jre1.8.0_60\bin\java.exe, -mx256m, org.infinitest.testrunner.TestRunnerProcess, org.infinitest.testrunner.JUnit4Runner, 29230]
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:09:59.817
+!MESSAGE Update complete. Status FAILING
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 11:10:29.710
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 11:10:29.717
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:10:29.733
+!MESSAGE finalProject Files changed: [C:\Users\isteiner\Downloads\e90\finalProject\finalProject\target\classes\finalProject\tests\BucketManagementTest.class]
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:10:29.735
+!MESSAGE finalProject Running tests: [finalProject.tests.BucketManagementTest]
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:10:29.738
+!MESSAGE Launching test runner process with the following configuration:
+Directory: C:\Users\isteiner\Downloads\e90\finalProject\finalProject
+Environment: {LOCALAPPDATA=C:\Users\isteiner\AppData\Local, PROCESSOR_LEVEL=6, FP_NO_HOST_CHECK=NO, USERDOMAIN=HUDSONCENTERPC7, AWS_SECRET_ACCESS_KEY=suy6Ww5MvIZTmAtOMP8uV4/eTkr3l8rBIrZ80qpw, LOGONSERVER=\\HUDSONCENTERPC7, AWS_DEFAULT_REGION=us-east-1, JAVA_HOME=C:\Program Files\Java\jdk1.8.0_60, SESSIONNAME=Console, ALLUSERSPROFILE=C:\ProgramData, PROCESSOR_ARCHITECTURE=AMD64, PSModulePath=C:\Windows\system32\WindowsPowerShell\v1.0\Modules\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\PowerShell\Modules\, SystemDrive=C:, VS100COMNTOOLS=c:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\Tools\, APPDATA=C:\Users\isteiner\AppData\Roaming, AWS_ACCESS_KEY_ID=AKIAIVKFPKS4Q5OROPIQ, USERNAME=isteiner, ProgramFiles(x86)=C:\Program Files (x86), CommonProgramFiles=C:\Program Files\Common Files, Path=C:\Python27\;C:\Python27\Scripts;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Symantec.cloud\PlatformAgent\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files (x86)\PuTTY;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files\Microsoft SQL Server\110\DTS\Binn\;c:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Amazon\AWSCLI\;C:\Users\isteiner\AppData\Local\Programs\Python\Python35-32\Scripts\;C:\Users\isteiner\AppData\Local\Programs\Python\Python35-32\;C:\Users\isteiner\AppData\Local\Programs\Python\Launcher\, PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC, OS=Windows_NT, COMPUTERNAME=HUDSONCENTERPC7, EC2_PRIVATE_KEY=C:\.ssh\WorkCLI.pem, PROCESSOR_REVISION=170a, CommonProgramW6432=C:\Program Files\Common Files, CLASSPATH=C:\Users\isteiner\Downloads\e90\finalProject\finalProject\target\classes;C:\Users\isteiner\aws-java-sdk\1.10.32\lib\aws-java-sdk-1.10.32.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\aspectj-1.6\aspectjrt.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\aspectj-1.6\aspectjweaver.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\commons-codec-1.6\commons-codec-1.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\commons-logging-1.1.3\commons-logging-1.1.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\freemarker-2.3.18\freemarker-2.3.18.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\httpcomponents-client-4.3\httpclient-4.3.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\httpcomponents-client-4.3\httpcore-4.3.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-annotations-2.5.3\jackson-annotations-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-core-2.5.3\jackson-core-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-databind-2.5.3\jackson-databind-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\javax-mail-1.4.6\javax.mail-api-1.4.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\joda-time-2.8.1\joda-time-2.8.1.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-beans-3.0.7.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-context-3.0.7.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-core-3.0.7.jar;C:\Users\isteiner\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\isteiner\.p2\pool\plugins\org.hamcrest.core_1.3.0.v201303031735.jar;C:/Users/isteiner/AppData/Local/Temp/infinitest918068478.jar, ComSpec=C:\Windows\system32\cmd.exe, EC2_CERT=C:\.ssh\WorkCLI.pem, ProgramData=C:\ProgramData, ProgramW6432=C:\Program Files, HOMEPATH=\Users\isteiner, SystemRoot=C:\Windows, TEMP=C:\Users\isteiner\AppData\Local\Temp, HOMEDRIVE=C:, PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 23 Stepping 10, GenuineIntel, USERPROFILE=C:\Users\isteiner, TMP=C:\Users\isteiner\AppData\Local\Temp, CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files, ProgramFiles=C:\Program Files, PUBLIC=C:\Users\Public, NUMBER_OF_PROCESSORS=2, windir=C:\Windows, =::=::\}
+Command: [C:\Program Files\Java\jre1.8.0_60\bin\java.exe, -mx256m, org.infinitest.testrunner.TestRunnerProcess, org.infinitest.testrunner.JUnit4Runner, 29239]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 11:11:25.738
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 11:11:25.740
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:11:25.784
+!MESSAGE finalProject Files changed: [C:\Users\isteiner\Downloads\e90\finalProject\finalProject\target\classes\finalProject\main\BucketManager.class]
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:11:25.787
+!MESSAGE finalProject Running tests: [finalProject.tests.BucketManagementTest]
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:11:25.789
+!MESSAGE Launching test runner process with the following configuration:
+Directory: C:\Users\isteiner\Downloads\e90\finalProject\finalProject
+Environment: {LOCALAPPDATA=C:\Users\isteiner\AppData\Local, PROCESSOR_LEVEL=6, FP_NO_HOST_CHECK=NO, USERDOMAIN=HUDSONCENTERPC7, AWS_SECRET_ACCESS_KEY=suy6Ww5MvIZTmAtOMP8uV4/eTkr3l8rBIrZ80qpw, LOGONSERVER=\\HUDSONCENTERPC7, AWS_DEFAULT_REGION=us-east-1, JAVA_HOME=C:\Program Files\Java\jdk1.8.0_60, SESSIONNAME=Console, ALLUSERSPROFILE=C:\ProgramData, PROCESSOR_ARCHITECTURE=AMD64, PSModulePath=C:\Windows\system32\WindowsPowerShell\v1.0\Modules\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\PowerShell\Modules\, SystemDrive=C:, VS100COMNTOOLS=c:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\Tools\, APPDATA=C:\Users\isteiner\AppData\Roaming, AWS_ACCESS_KEY_ID=AKIAIVKFPKS4Q5OROPIQ, USERNAME=isteiner, ProgramFiles(x86)=C:\Program Files (x86), CommonProgramFiles=C:\Program Files\Common Files, Path=C:\Python27\;C:\Python27\Scripts;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Symantec.cloud\PlatformAgent\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files (x86)\PuTTY;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files\Microsoft SQL Server\110\DTS\Binn\;c:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Amazon\AWSCLI\;C:\Users\isteiner\AppData\Local\Programs\Python\Python35-32\Scripts\;C:\Users\isteiner\AppData\Local\Programs\Python\Python35-32\;C:\Users\isteiner\AppData\Local\Programs\Python\Launcher\, PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC, OS=Windows_NT, COMPUTERNAME=HUDSONCENTERPC7, EC2_PRIVATE_KEY=C:\.ssh\WorkCLI.pem, PROCESSOR_REVISION=170a, CommonProgramW6432=C:\Program Files\Common Files, CLASSPATH=C:\Users\isteiner\Downloads\e90\finalProject\finalProject\target\classes;C:\Users\isteiner\aws-java-sdk\1.10.32\lib\aws-java-sdk-1.10.32.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\aspectj-1.6\aspectjrt.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\aspectj-1.6\aspectjweaver.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\commons-codec-1.6\commons-codec-1.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\commons-logging-1.1.3\commons-logging-1.1.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\freemarker-2.3.18\freemarker-2.3.18.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\httpcomponents-client-4.3\httpclient-4.3.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\httpcomponents-client-4.3\httpcore-4.3.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-annotations-2.5.3\jackson-annotations-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-core-2.5.3\jackson-core-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-databind-2.5.3\jackson-databind-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\javax-mail-1.4.6\javax.mail-api-1.4.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\joda-time-2.8.1\joda-time-2.8.1.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-beans-3.0.7.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-context-3.0.7.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-core-3.0.7.jar;C:\Users\isteiner\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\isteiner\.p2\pool\plugins\org.hamcrest.core_1.3.0.v201303031735.jar;C:/Users/isteiner/AppData/Local/Temp/infinitest918068478.jar, ComSpec=C:\Windows\system32\cmd.exe, EC2_CERT=C:\.ssh\WorkCLI.pem, ProgramData=C:\ProgramData, ProgramW6432=C:\Program Files, HOMEPATH=\Users\isteiner, SystemRoot=C:\Windows, TEMP=C:\Users\isteiner\AppData\Local\Temp, HOMEDRIVE=C:, PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 23 Stepping 10, GenuineIntel, USERPROFILE=C:\Users\isteiner, TMP=C:\Users\isteiner\AppData\Local\Temp, CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files, ProgramFiles=C:\Program Files, PUBLIC=C:\Users\Public, NUMBER_OF_PROCESSORS=2, windir=C:\Windows, =::=::\}
+Command: [C:\Program Files\Java\jre1.8.0_60\bin\java.exe, -mx256m, org.infinitest.testrunner.TestRunnerProcess, org.infinitest.testrunner.JUnit4Runner, 29246]
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:11:28.121
+!MESSAGE finalProject.tests.BucketManagementTest was interrupted. Re-running.
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:11:28.125
+!MESSAGE Tried to close socket, but was already closed
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:11:28.131
+!MESSAGE Test runner process terminated
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:11:33.557
+!MESSAGE Update complete. Status FAILING
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 11:12:22.098
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 11:12:22.109
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:12:22.125
+!MESSAGE finalProject Files changed: [C:\Users\isteiner\Downloads\e90\finalProject\finalProject\target\classes\finalProject\tests\BucketManagementTest.class]
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:12:22.135
+!MESSAGE finalProject Running tests: [finalProject.tests.BucketManagementTest]
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:12:22.138
+!MESSAGE Launching test runner process with the following configuration:
+Directory: C:\Users\isteiner\Downloads\e90\finalProject\finalProject
+Environment: {LOCALAPPDATA=C:\Users\isteiner\AppData\Local, PROCESSOR_LEVEL=6, FP_NO_HOST_CHECK=NO, USERDOMAIN=HUDSONCENTERPC7, AWS_SECRET_ACCESS_KEY=suy6Ww5MvIZTmAtOMP8uV4/eTkr3l8rBIrZ80qpw, LOGONSERVER=\\HUDSONCENTERPC7, AWS_DEFAULT_REGION=us-east-1, JAVA_HOME=C:\Program Files\Java\jdk1.8.0_60, SESSIONNAME=Console, ALLUSERSPROFILE=C:\ProgramData, PROCESSOR_ARCHITECTURE=AMD64, PSModulePath=C:\Windows\system32\WindowsPowerShell\v1.0\Modules\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\PowerShell\Modules\, SystemDrive=C:, VS100COMNTOOLS=c:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\Tools\, APPDATA=C:\Users\isteiner\AppData\Roaming, AWS_ACCESS_KEY_ID=AKIAIVKFPKS4Q5OROPIQ, USERNAME=isteiner, ProgramFiles(x86)=C:\Program Files (x86), CommonProgramFiles=C:\Program Files\Common Files, Path=C:\Python27\;C:\Python27\Scripts;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Symantec.cloud\PlatformAgent\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files (x86)\PuTTY;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files\Microsoft SQL Server\110\DTS\Binn\;c:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Amazon\AWSCLI\;C:\Users\isteiner\AppData\Local\Programs\Python\Python35-32\Scripts\;C:\Users\isteiner\AppData\Local\Programs\Python\Python35-32\;C:\Users\isteiner\AppData\Local\Programs\Python\Launcher\, PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC, OS=Windows_NT, COMPUTERNAME=HUDSONCENTERPC7, EC2_PRIVATE_KEY=C:\.ssh\WorkCLI.pem, PROCESSOR_REVISION=170a, CommonProgramW6432=C:\Program Files\Common Files, CLASSPATH=C:\Users\isteiner\Downloads\e90\finalProject\finalProject\target\classes;C:\Users\isteiner\aws-java-sdk\1.10.32\lib\aws-java-sdk-1.10.32.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\aspectj-1.6\aspectjrt.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\aspectj-1.6\aspectjweaver.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\commons-codec-1.6\commons-codec-1.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\commons-logging-1.1.3\commons-logging-1.1.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\freemarker-2.3.18\freemarker-2.3.18.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\httpcomponents-client-4.3\httpclient-4.3.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\httpcomponents-client-4.3\httpcore-4.3.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-annotations-2.5.3\jackson-annotations-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-core-2.5.3\jackson-core-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-databind-2.5.3\jackson-databind-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\javax-mail-1.4.6\javax.mail-api-1.4.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\joda-time-2.8.1\joda-time-2.8.1.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-beans-3.0.7.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-context-3.0.7.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-core-3.0.7.jar;C:\Users\isteiner\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\isteiner\.p2\pool\plugins\org.hamcrest.core_1.3.0.v201303031735.jar;C:/Users/isteiner/AppData/Local/Temp/infinitest918068478.jar, ComSpec=C:\Windows\system32\cmd.exe, EC2_CERT=C:\.ssh\WorkCLI.pem, ProgramData=C:\ProgramData, ProgramW6432=C:\Program Files, HOMEPATH=\Users\isteiner, SystemRoot=C:\Windows, TEMP=C:\Users\isteiner\AppData\Local\Temp, HOMEDRIVE=C:, PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 23 Stepping 10, GenuineIntel, USERPROFILE=C:\Users\isteiner, TMP=C:\Users\isteiner\AppData\Local\Temp, CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files, ProgramFiles=C:\Program Files, PUBLIC=C:\Users\Public, NUMBER_OF_PROCESSORS=2, windir=C:\Windows, =::=::\}
+Command: [C:\Program Files\Java\jre1.8.0_60\bin\java.exe, -mx256m, org.infinitest.testrunner.TestRunnerProcess, org.infinitest.testrunner.JUnit4Runner, 29252]
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2015-11-16 11:12:50.362
+!MESSAGE Switching to global default account
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 11:12:59.399
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 11:12:59.400
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:12:59.417
+!MESSAGE finalProject Files changed: [C:\Users\isteiner\Downloads\e90\finalProject\finalProject\target\classes\finalProject\tests\BucketManagementTest.class]
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:12:59.418
+!MESSAGE finalProject Running tests: [finalProject.tests.BucketManagementTest]
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:12:59.420
+!MESSAGE Launching test runner process with the following configuration:
+Directory: C:\Users\isteiner\Downloads\e90\finalProject\finalProject
+Environment: {LOCALAPPDATA=C:\Users\isteiner\AppData\Local, PROCESSOR_LEVEL=6, FP_NO_HOST_CHECK=NO, USERDOMAIN=HUDSONCENTERPC7, AWS_SECRET_ACCESS_KEY=suy6Ww5MvIZTmAtOMP8uV4/eTkr3l8rBIrZ80qpw, LOGONSERVER=\\HUDSONCENTERPC7, AWS_DEFAULT_REGION=us-east-1, JAVA_HOME=C:\Program Files\Java\jdk1.8.0_60, SESSIONNAME=Console, ALLUSERSPROFILE=C:\ProgramData, PROCESSOR_ARCHITECTURE=AMD64, PSModulePath=C:\Windows\system32\WindowsPowerShell\v1.0\Modules\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\PowerShell\Modules\, SystemDrive=C:, VS100COMNTOOLS=c:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\Tools\, APPDATA=C:\Users\isteiner\AppData\Roaming, AWS_ACCESS_KEY_ID=AKIAIVKFPKS4Q5OROPIQ, USERNAME=isteiner, ProgramFiles(x86)=C:\Program Files (x86), CommonProgramFiles=C:\Program Files\Common Files, Path=C:\Python27\;C:\Python27\Scripts;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Symantec.cloud\PlatformAgent\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files (x86)\PuTTY;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files\Microsoft SQL Server\110\DTS\Binn\;c:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Amazon\AWSCLI\;C:\Users\isteiner\AppData\Local\Programs\Python\Python35-32\Scripts\;C:\Users\isteiner\AppData\Local\Programs\Python\Python35-32\;C:\Users\isteiner\AppData\Local\Programs\Python\Launcher\, PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC, OS=Windows_NT, COMPUTERNAME=HUDSONCENTERPC7, EC2_PRIVATE_KEY=C:\.ssh\WorkCLI.pem, PROCESSOR_REVISION=170a, CommonProgramW6432=C:\Program Files\Common Files, CLASSPATH=C:\Users\isteiner\Downloads\e90\finalProject\finalProject\target\classes;C:\Users\isteiner\aws-java-sdk\1.10.32\lib\aws-java-sdk-1.10.32.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\aspectj-1.6\aspectjrt.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\aspectj-1.6\aspectjweaver.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\commons-codec-1.6\commons-codec-1.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\commons-logging-1.1.3\commons-logging-1.1.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\freemarker-2.3.18\freemarker-2.3.18.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\httpcomponents-client-4.3\httpclient-4.3.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\httpcomponents-client-4.3\httpcore-4.3.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-annotations-2.5.3\jackson-annotations-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-core-2.5.3\jackson-core-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-databind-2.5.3\jackson-databind-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\javax-mail-1.4.6\javax.mail-api-1.4.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\joda-time-2.8.1\joda-time-2.8.1.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-beans-3.0.7.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-context-3.0.7.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-core-3.0.7.jar;C:\Users\isteiner\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\isteiner\.p2\pool\plugins\org.hamcrest.core_1.3.0.v201303031735.jar;C:/Users/isteiner/AppData/Local/Temp/infinitest918068478.jar, ComSpec=C:\Windows\system32\cmd.exe, EC2_CERT=C:\.ssh\WorkCLI.pem, ProgramData=C:\ProgramData, ProgramW6432=C:\Program Files, HOMEPATH=\Users\isteiner, SystemRoot=C:\Windows, TEMP=C:\Users\isteiner\AppData\Local\Temp, HOMEDRIVE=C:, PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 23 Stepping 10, GenuineIntel, USERPROFILE=C:\Users\isteiner, TMP=C:\Users\isteiner\AppData\Local\Temp, CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files, ProgramFiles=C:\Program Files, PUBLIC=C:\Users\Public, NUMBER_OF_PROCESSORS=2, windir=C:\Windows, =::=::\}
+Command: [C:\Program Files\Java\jre1.8.0_60\bin\java.exe, -mx256m, org.infinitest.testrunner.TestRunnerProcess, org.infinitest.testrunner.JUnit4Runner, 29257]
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:13:01.556
+!MESSAGE finalProject.tests.BucketManagementTest was interrupted. Re-running.
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:13:01.557
+!MESSAGE Tried to close socket, but was already closed
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:13:01.567
+!MESSAGE Test runner process terminated
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 11:13:45.269
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 11:13:45.276
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:13:45.293
+!MESSAGE finalProject Files changed: [C:\Users\isteiner\Downloads\e90\finalProject\finalProject\target\classes\finalProject\main\BucketManager.class]
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:13:45.295
+!MESSAGE finalProject Running tests: [finalProject.tests.BucketManagementTest]
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:13:45.297
+!MESSAGE Launching test runner process with the following configuration:
+Directory: C:\Users\isteiner\Downloads\e90\finalProject\finalProject
+Environment: {LOCALAPPDATA=C:\Users\isteiner\AppData\Local, PROCESSOR_LEVEL=6, FP_NO_HOST_CHECK=NO, USERDOMAIN=HUDSONCENTERPC7, AWS_SECRET_ACCESS_KEY=suy6Ww5MvIZTmAtOMP8uV4/eTkr3l8rBIrZ80qpw, LOGONSERVER=\\HUDSONCENTERPC7, AWS_DEFAULT_REGION=us-east-1, JAVA_HOME=C:\Program Files\Java\jdk1.8.0_60, SESSIONNAME=Console, ALLUSERSPROFILE=C:\ProgramData, PROCESSOR_ARCHITECTURE=AMD64, PSModulePath=C:\Windows\system32\WindowsPowerShell\v1.0\Modules\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\PowerShell\Modules\, SystemDrive=C:, VS100COMNTOOLS=c:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\Tools\, APPDATA=C:\Users\isteiner\AppData\Roaming, AWS_ACCESS_KEY_ID=AKIAIVKFPKS4Q5OROPIQ, USERNAME=isteiner, ProgramFiles(x86)=C:\Program Files (x86), CommonProgramFiles=C:\Program Files\Common Files, Path=C:\Python27\;C:\Python27\Scripts;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Symantec.cloud\PlatformAgent\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files (x86)\PuTTY;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files\Microsoft SQL Server\110\DTS\Binn\;c:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Amazon\AWSCLI\;C:\Users\isteiner\AppData\Local\Programs\Python\Python35-32\Scripts\;C:\Users\isteiner\AppData\Local\Programs\Python\Python35-32\;C:\Users\isteiner\AppData\Local\Programs\Python\Launcher\, PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC, OS=Windows_NT, COMPUTERNAME=HUDSONCENTERPC7, EC2_PRIVATE_KEY=C:\.ssh\WorkCLI.pem, PROCESSOR_REVISION=170a, CommonProgramW6432=C:\Program Files\Common Files, CLASSPATH=C:\Users\isteiner\Downloads\e90\finalProject\finalProject\target\classes;C:\Users\isteiner\aws-java-sdk\1.10.32\lib\aws-java-sdk-1.10.32.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\aspectj-1.6\aspectjrt.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\aspectj-1.6\aspectjweaver.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\commons-codec-1.6\commons-codec-1.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\commons-logging-1.1.3\commons-logging-1.1.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\freemarker-2.3.18\freemarker-2.3.18.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\httpcomponents-client-4.3\httpclient-4.3.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\httpcomponents-client-4.3\httpcore-4.3.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-annotations-2.5.3\jackson-annotations-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-core-2.5.3\jackson-core-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-databind-2.5.3\jackson-databind-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\javax-mail-1.4.6\javax.mail-api-1.4.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\joda-time-2.8.1\joda-time-2.8.1.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-beans-3.0.7.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-context-3.0.7.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-core-3.0.7.jar;C:\Users\isteiner\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\isteiner\.p2\pool\plugins\org.hamcrest.core_1.3.0.v201303031735.jar;C:/Users/isteiner/AppData/Local/Temp/infinitest918068478.jar, ComSpec=C:\Windows\system32\cmd.exe, EC2_CERT=C:\.ssh\WorkCLI.pem, ProgramData=C:\ProgramData, ProgramW6432=C:\Program Files, HOMEPATH=\Users\isteiner, SystemRoot=C:\Windows, TEMP=C:\Users\isteiner\AppData\Local\Temp, HOMEDRIVE=C:, PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 23 Stepping 10, GenuineIntel, USERPROFILE=C:\Users\isteiner, TMP=C:\Users\isteiner\AppData\Local\Temp, CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files, ProgramFiles=C:\Program Files, PUBLIC=C:\Users\Public, NUMBER_OF_PROCESSORS=2, windir=C:\Windows, =::=::\}
+Command: [C:\Program Files\Java\jre1.8.0_60\bin\java.exe, -mx256m, org.infinitest.testrunner.TestRunnerProcess, org.infinitest.testrunner.JUnit4Runner, 29266]
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:13:47.458
+!MESSAGE finalProject.tests.BucketManagementTest was interrupted. Re-running.
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:13:47.458
+!MESSAGE Tried to close socket, but was already closed
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:13:47.467
+!MESSAGE Test runner process terminated
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 11:13:49.654
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-11-16 11:13:49.658
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:13:49.672
+!MESSAGE finalProject Files changed: [C:\Users\isteiner\Downloads\e90\finalProject\finalProject\target\classes\finalProject\main\BucketManager.class]
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:13:49.675
+!MESSAGE finalProject Running tests: [finalProject.tests.BucketManagementTest]
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:13:49.677
+!MESSAGE Launching test runner process with the following configuration:
+Directory: C:\Users\isteiner\Downloads\e90\finalProject\finalProject
+Environment: {LOCALAPPDATA=C:\Users\isteiner\AppData\Local, PROCESSOR_LEVEL=6, FP_NO_HOST_CHECK=NO, USERDOMAIN=HUDSONCENTERPC7, AWS_SECRET_ACCESS_KEY=suy6Ww5MvIZTmAtOMP8uV4/eTkr3l8rBIrZ80qpw, LOGONSERVER=\\HUDSONCENTERPC7, AWS_DEFAULT_REGION=us-east-1, JAVA_HOME=C:\Program Files\Java\jdk1.8.0_60, SESSIONNAME=Console, ALLUSERSPROFILE=C:\ProgramData, PROCESSOR_ARCHITECTURE=AMD64, PSModulePath=C:\Windows\system32\WindowsPowerShell\v1.0\Modules\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\PowerShell\Modules\, SystemDrive=C:, VS100COMNTOOLS=c:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\Tools\, APPDATA=C:\Users\isteiner\AppData\Roaming, AWS_ACCESS_KEY_ID=AKIAIVKFPKS4Q5OROPIQ, USERNAME=isteiner, ProgramFiles(x86)=C:\Program Files (x86), CommonProgramFiles=C:\Program Files\Common Files, Path=C:\Python27\;C:\Python27\Scripts;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Symantec.cloud\PlatformAgent\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files (x86)\PuTTY;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files\Microsoft SQL Server\110\DTS\Binn\;c:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Amazon\AWSCLI\;C:\Users\isteiner\AppData\Local\Programs\Python\Python35-32\Scripts\;C:\Users\isteiner\AppData\Local\Programs\Python\Python35-32\;C:\Users\isteiner\AppData\Local\Programs\Python\Launcher\, PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC, OS=Windows_NT, COMPUTERNAME=HUDSONCENTERPC7, EC2_PRIVATE_KEY=C:\.ssh\WorkCLI.pem, PROCESSOR_REVISION=170a, CommonProgramW6432=C:\Program Files\Common Files, CLASSPATH=C:\Users\isteiner\Downloads\e90\finalProject\finalProject\target\classes;C:\Users\isteiner\aws-java-sdk\1.10.32\lib\aws-java-sdk-1.10.32.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\aspectj-1.6\aspectjrt.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\aspectj-1.6\aspectjweaver.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\commons-codec-1.6\commons-codec-1.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\commons-logging-1.1.3\commons-logging-1.1.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\freemarker-2.3.18\freemarker-2.3.18.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\httpcomponents-client-4.3\httpclient-4.3.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\httpcomponents-client-4.3\httpcore-4.3.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-annotations-2.5.3\jackson-annotations-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-core-2.5.3\jackson-core-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\jackson-databind-2.5.3\jackson-databind-2.5.3.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\javax-mail-1.4.6\javax.mail-api-1.4.6.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\joda-time-2.8.1\joda-time-2.8.1.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-beans-3.0.7.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-context-3.0.7.jar;C:\Users\isteiner\aws-java-sdk\1.10.32\third-party\spring-3.0\spring-core-3.0.7.jar;C:\Users\isteiner\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\isteiner\.p2\pool\plugins\org.hamcrest.core_1.3.0.v201303031735.jar;C:/Users/isteiner/AppData/Local/Temp/infinitest918068478.jar, ComSpec=C:\Windows\system32\cmd.exe, EC2_CERT=C:\.ssh\WorkCLI.pem, ProgramData=C:\ProgramData, ProgramW6432=C:\Program Files, HOMEPATH=\Users\isteiner, SystemRoot=C:\Windows, TEMP=C:\Users\isteiner\AppData\Local\Temp, HOMEDRIVE=C:, PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 23 Stepping 10, GenuineIntel, USERPROFILE=C:\Users\isteiner, TMP=C:\Users\isteiner\AppData\Local\Temp, CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files, ProgramFiles=C:\Program Files, PUBLIC=C:\Users\Public, NUMBER_OF_PROCESSORS=2, windir=C:\Windows, =::=::\}
+Command: [C:\Program Files\Java\jre1.8.0_60\bin\java.exe, -mx256m, org.infinitest.testrunner.TestRunnerProcess, org.infinitest.testrunner.JUnit4Runner, 29269]
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:13:51.855
+!MESSAGE finalProject.tests.BucketManagementTest was interrupted. Re-running.
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:13:51.856
+!MESSAGE Tried to close socket, but was already closed
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:13:51.865
+!MESSAGE Test runner process terminated
+
+!ENTRY org.infinitest.eclipse 1 0 2015-11-16 11:13:58.108
+!MESSAGE Update complete. Status FAILING

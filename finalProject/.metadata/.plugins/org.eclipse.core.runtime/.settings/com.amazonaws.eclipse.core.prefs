@@ -1,9 +1,8 @@
 7c7839eb-9f3c-4258-9a63-99668c5fd735\:credentialProfileName=finalProject
 bdd88f77-514b-48ec-8063-8120a6b2b2fa\:credentialProfileName=harvard
-credentialProfileAccountIds=bdd88f77-514b-48ec-8063-8120a6b2b2fa|7c7839eb-9f3c-4258-9a63-99668c5fd735
+credentialProfileAccountIds=bdd88f77-514b-48ec-8063-8120a6b2b2fa
 currentAccount=bdd88f77-514b-48ec-8063-8120a6b2b2fa
 currentDefaultAccount=bdd88f77-514b-48ec-8063-8120a6b2b2fa
 currentDefaultAccount-us-east-1=7c7839eb-9f3c-4258-9a63-99668c5fd735
 ec2PreferencesImported=true
 eclipse.preferences.version=1
-regionsWithDefaultAccounts=us-east-1
