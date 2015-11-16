@@ -29,12 +29,20 @@ public class BucketManager {
 		createBucket(BucketName.OUTPUT);
 	}
 	
+	public static void createThumbBucket(){
+		createBucket(BucketName.THUMBNAILS);
+	}
+	
 	public static void destroyInputBucket(){
 		destroyBucket(BucketName.INPUT);
 	}
 	
 	public static void destroyOutputBucket(){
 		destroyBucket(BucketName.OUTPUT);
+	}
+	
+	public static void destroyThumbBucket(){
+		destroyBucket(BucketName.THUMBNAILS);
 	}
 	
 	public static void destroyBucket(Enum<BucketName> bucketName){

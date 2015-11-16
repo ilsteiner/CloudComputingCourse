@@ -1,7 +1,7 @@
 package finalProject.main;
 
 public enum BucketName {
-	INPUT,OUTPUT;
+	INPUT,OUTPUT,THUMBNAILS;
 	
 	@Override
 	public String toString(){
@@ -10,6 +10,8 @@ public enum BucketName {
 			return "transcoder-input-isteiner".toLowerCase();
 		case OUTPUT:
 			return "transcoder-output-isteiner".toLowerCase();
+		case THUMBNAILS:
+			return "transcoder-thumbnails-isteiner".toLowerCase();
 		default:
 			return "";
 		}
