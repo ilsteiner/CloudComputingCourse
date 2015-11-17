@@ -7,16 +7,21 @@ public class MonteCarlo {
 	public static void main(String[] args) {
 		int numThrows = 10;
 		DecimalFormat dFormat = new DecimalFormat("#.0000000000");
+		double piSum = 0;
+		int estimateCount = 0;
 		
-		while(numThrows < 10000){
+		while(numThrows < 100000){
 			double pi = estimatePi(numThrows);
-			System.out.println("------------------------------------");
+			piSum += pi;
+			estimateCount += 1;
 			System.out.println("Number of estimates: " + numThrows);
 			System.out.println("Estimated pi: " + dFormat.format(pi));
 			System.out.println("Difference from actual pi: " + dFormat.format(piSimilarity(pi)));
-			
+			System.out.println("------------------------------------");
 			numThrows += 1000;
 		}
+		
+		System.out.println("Average value for pi: " + dFormat.format(piSum/estimateCount));
 	}
 
 	private static double estimatePi(int numThrows){		
@@ -35,16 +40,6 @@ public class MonteCarlo {
 		}
 		
 		return (4*(double)circleCount)/(double)numThrows;
-	}
-	
-	private static double averagePi(int numEstimates,int numThrows){
-		double sum = 0;
-		
-		for(int i=0;i<numEstimates;i++){
-			sum += estimatePi(numThrows);
-		}
-		
-		return sum/numEstimates;
 	}
 	
 	private static double piSimilarity(double estimate){
