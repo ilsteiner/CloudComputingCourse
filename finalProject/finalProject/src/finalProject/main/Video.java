@@ -6,12 +6,19 @@ import javax.validation.constraints.NotNull;
 
 public class Video {
 	@NotNull
-	File videoFile;
-	String fileName;
+	private File videoFile;
+	private String fileName;
 	
 	public Video(File videoFile) {
 		this.videoFile = videoFile;
 		fileName = videoFile.getName();
 	}
-	
+
+	public File getVideoFile() {
+		return videoFile;
+	}
+
+	public String getFileName() {
+		return fileName;
+	}
 }
