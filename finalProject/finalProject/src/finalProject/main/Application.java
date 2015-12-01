@@ -2,14 +2,18 @@ package finalProject.main;
 
 import java.io.File;
 
+import com.amazonaws.services.s3.model.PutObjectResult;
+
 public class Application {
 	public static void main(String[] args) {
 		String filePath = args[0];
 		
-		File videoFile = new File(filePath);
+		Video video = new Video(filePath);
 		
-		Video video = new Video(videoFile);
+		PutObjectResult result = video.upload();
 		
-		System.out.println(video.getFileName() + " imported");
+		String fileSize = BucketManager.readableFileSize(video.length());
+		
+		System.out.println(video.getName() + " (" + fileSize + ") " + "uploaded ");
 	}
 }

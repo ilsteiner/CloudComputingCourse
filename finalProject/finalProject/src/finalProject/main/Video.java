@@ -4,21 +4,29 @@ import java.io.File;
 
 import javax.validation.constraints.NotNull;
 
-public class Video {
+import com.amazonaws.services.s3.model.PutObjectResult;
+
+public class Video extends File{
 	@NotNull
-	private File videoFile;
-	private String fileName;
+	private static final long serialVersionUID = -3812260948436342366L;
+	private long id;
+	private String objectKey;
 	
-	public Video(File videoFile) {
-		this.videoFile = videoFile;
-		fileName = videoFile.getName();
+	public Video(String filePath) {
+		super(filePath);
+		id = BucketManager.getFileID(this.getName());
+		objectKey = id + "_" + this.getName();
 	}
 
-	public File getVideoFile() {
-		return videoFile;
+	public long getId() {
+		return id;
 	}
 
-	public String getFileName() {
-		return fileName;
+	public String getObjectKey() {
+		return objectKey;
+	}
+	
+	public PutObjectResult upload(){
+		return BucketManager.addInputFile(this);
 	}
 }
