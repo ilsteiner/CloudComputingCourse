@@ -1,24 +1,29 @@
 package finalProject.main;
 
+import java.util.HashMap;
 import java.util.List;
 
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.services.elastictranscoder.AmazonElasticTranscoderClient;
+import com.amazonaws.services.elastictranscoder.model.CreateJobOutput;
+import com.amazonaws.services.elastictranscoder.model.CreateJobRequest;
+import com.amazonaws.services.elastictranscoder.model.CreateJobResult;
 import com.amazonaws.services.elastictranscoder.model.CreatePipelineRequest;
 import com.amazonaws.services.elastictranscoder.model.CreatePipelineResult;
+import com.amazonaws.services.elastictranscoder.model.JobInput;
+import com.amazonaws.services.elastictranscoder.model.Notifications;
 import com.amazonaws.services.elastictranscoder.model.Pipeline;
 
 public class PipelineManager {
 	public static final String name = "MainPipeline";
 	public static final String role = "arn:aws:iam::101517482224:role/Elastic_Transcoder_Default_Role";
+	public static final AmazonElasticTranscoderClient transcoder = new AmazonElasticTranscoderClient(new ProfileCredentialsProvider("finalProject"));
 
 	public PipelineManager() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public static Pipeline createMainPipeline(){
-		AmazonElasticTranscoderClient transcoder = new AmazonElasticTranscoderClient(new ProfileCredentialsProvider("finalProject"));
-	
+	public static Pipeline createMainPipeline(){	
 		Pipeline returnPipeline = null;
 		
 		for(Pipeline pipeline : transcoder.listPipelines().getPipelines()){
@@ -27,12 +32,13 @@ public class PipelineManager {
 			}
 		}
 		
-		if(returnPipeline == null){
+		if(returnPipeline == null){			
 			CreatePipelineRequest request = new CreatePipelineRequest();
 			request.setName(name);
 			request.setInputBucket(BucketName.INPUT.toString());
 			request.setOutputBucket(BucketName.OUTPUT.toString());
 			request.setRole(role);
+			request.setNotifications(NotificationManager.getNotifications());
 			
 			//Can't figure out how to properly set the thumbnail bucket
 			//request.setThumbnailConfig(new PipelineOutputConfig().withBucket(BucketName.THUMBNAILS.toString()).withStorageClass("ReducedRedundancy"));		
@@ -44,9 +50,15 @@ public class PipelineManager {
 		return returnPipeline;
 	}
 	
-	public static List<Pipeline> getPipelines(){
-		AmazonElasticTranscoderClient transcoder = new AmazonElasticTranscoderClient(new ProfileCredentialsProvider("finalProject"));
-		
+	public static List<Pipeline> getPipelines(){		
 		return transcoder.listPipelines().getPipelines();
+	}
+	
+	public static CreateJobResult createJob(Video video,Preset preset){
+		JobInput input = new JobInput().withKey(video.getObjectKey());
+		CreateJobOutput output = new CreateJobOutput().withKey(video.getObjectKey()).withPresetId(preset.getId());
+		CreateJobRequest request = new CreateJobRequest().withInput(input).withPipelineId(createMainPipeline().getId()).withOutput(output);
+		
+		return transcoder.createJob(request);
 	}
 }
