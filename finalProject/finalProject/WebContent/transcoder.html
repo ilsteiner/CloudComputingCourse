@@ -10,6 +10,8 @@
     <div>
     	<form action="#" th:action="@{/}" th:object="${video}" method="post">
     		<input type="file" th:field="*{videoFile}" />
+    		<input type="radio" th:field="*{output}" value="GIF"/>
+    		<input type="radio" th:field="*{output}" value="HTML5"/>
     		<button type="submit">Submit</button>
     	</form>
     </div>

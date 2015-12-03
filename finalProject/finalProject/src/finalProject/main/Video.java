@@ -1,6 +1,7 @@
 package finalProject.main;
 
 import java.io.File;
+import java.util.List;
 
 import javax.validation.constraints.NotNull;
 
@@ -37,5 +38,36 @@ public class Video extends File{
 	
 	public CreateJobResult processToHTML5(){
 		return PipelineManager.createJob(this,Preset.HTML5);
+	}
+	
+	public List<String> getProgress(){
+		return NotificationManager.getProgress(this);
+	}
+	
+	public List<String> getError(){
+		return NotificationManager.getError(this);
+	}
+	
+	public List<String> getComplete(){
+		return NotificationManager.getComplete(this);
+	}
+	
+	public List<String> getWarning(){
+		return NotificationManager.getWarning(this);
+	}
+	
+	public void clearQueue(){
+		NotificationManager.clearQueue(this);
+	}
+
+	public String getOutput(String filepath) {
+		File inputFile = new File(filepath);
+		File outputFile = BucketManager.getOutput(this,inputFile);
+		
+		return outputFile.getAbsolutePath();
+	}
+
+	public void deleteInputFile() {
+		BucketManager.deleteInputFile(this);		
 	}
 }

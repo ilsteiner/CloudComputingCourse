@@ -13,15 +13,36 @@ public class Application {
 		
 		setup();
 		
-		PutObjectResult result = video.upload();
+		video.upload();
 		
 		String fileSize = BucketManager.readableFileSize(video.length());
 		
 		System.out.println(video.getName() + " (" + fileSize + ") " + "uploaded ");
 		
-		video.processToGIF();
+		video.processToHTML5();
 		
-		System.out.println(video.getName() + " processing...");
+		while(true){
+			if(video.getComplete().size() > 0){
+				System.out.println("Processing complete!");
+				video.deleteInputFile();
+				video.clearQueue();
+				System.out.println("New file saved: " + video.getOutput(filePath));
+				break;
+			}
+			
+			for(String warning : video.getWarning()){
+				System.out.println(warning);
+			}
+			
+			for(String error : video.getError()){
+				System.out.println(error);
+				break;
+			}
+			
+			if(video.getProgress().size() > 0){
+				System.out.println("Processing...");
+			}
+		}
 	}
 	
 	private static void setup(){

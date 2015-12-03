@@ -14,6 +14,7 @@ import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.AmazonS3Exception;
 import com.amazonaws.services.s3.model.DeleteObjectsRequest;
+import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectResult;
@@ -155,5 +156,19 @@ public class BucketManager {
 	    final String[] units = new String[] { "B", "kB", "MB", "GB", "TB" };
 	    int digitGroups = (int) (Math.log10(size)/Math.log10(1024));
 	    return new DecimalFormat("#,##0.#").format(size/Math.pow(1024, digitGroups)) + " " + units[digitGroups];
+	}
+	
+	public static File getOutput(Video video,File inputFile){
+		GetObjectRequest request = new GetObjectRequest(BucketName.OUTPUT.toString(),video.getObjectKey());
+		
+		File outputFile = inputFile.getParentFile();
+		
+		//client.getObject(request, outputFile);
+		
+		return outputFile;
+	}
+
+	public static void deleteInputFile(Video video) {
+		client.deleteObject(BucketName.INPUT.toString(), video.getObjectKey());		
 	}
 }
