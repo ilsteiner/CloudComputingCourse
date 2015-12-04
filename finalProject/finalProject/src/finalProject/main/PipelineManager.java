@@ -1,6 +1,5 @@
 package finalProject.main;
 
-import java.util.HashMap;
 import java.util.List;
 
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
@@ -11,7 +10,6 @@ import com.amazonaws.services.elastictranscoder.model.CreateJobResult;
 import com.amazonaws.services.elastictranscoder.model.CreatePipelineRequest;
 import com.amazonaws.services.elastictranscoder.model.CreatePipelineResult;
 import com.amazonaws.services.elastictranscoder.model.JobInput;
-import com.amazonaws.services.elastictranscoder.model.Notifications;
 import com.amazonaws.services.elastictranscoder.model.Pipeline;
 
 public class PipelineManager {

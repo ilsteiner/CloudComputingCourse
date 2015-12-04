@@ -1,6 +1,7 @@
 package finalProject.main;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 import com.amazonaws.services.elastictranscoder.model.CreateJobResult;
@@ -25,7 +26,7 @@ public class Video extends File {
 		return objectKey;
 	}
 
-	public PutObjectResult upload() {
+	public PutObjectResult upload() throws IOException {
 		return BucketManager.addInputFile(this);
 	}
 

@@ -14,7 +14,6 @@ import com.amazonaws.services.sqs.AmazonSQSClient;
 import com.amazonaws.services.sqs.model.CreateQueueRequest;
 import com.amazonaws.services.sqs.model.DeleteMessageRequest;
 import com.amazonaws.services.sqs.model.Message;
-import com.amazonaws.services.sqs.model.ReceiveMessageRequest;
 
 public class NotificationManager {
 	private static final AmazonSNS sns = new AmazonSNSClient(new ProfileCredentialsProvider("finalProject"));

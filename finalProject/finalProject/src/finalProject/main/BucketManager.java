@@ -1,10 +1,12 @@
 package finalProject.main;
 
-import java.io.File;
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.Iterator;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
+
+import org.apache.tika.Tika;
 
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.regions.Region;
@@ -129,7 +131,10 @@ public class BucketManager {
 		}
 	}
 
-	public static PutObjectResult addInputFile(Video video) {
+	public static PutObjectResult addInputFile(Video video) throws IOException {
+		if(!isVideo(video)){
+			throw new IllegalArgumentException(video.getName() + " is not a valid video file");
+		}
 		PutObjectRequest request = new PutObjectRequest(BucketName.INPUT.toString(), video.getObjectKey(),
 				video);
 		return client.putObject(request);
@@ -175,11 +180,13 @@ public class BucketManager {
 					client.setObjectAcl(BucketName.OUTPUT.toString(), video.getObjectKey(),
 							CannedAccessControlList.PublicRead);
 					waitSeconds = waitSeconds * 2;
-				} catch (AmazonS3Exception e1) {
-					System.out.println("Could not make output file public.");
-				} catch (InterruptedException ex) {
+				} 
+				catch (InterruptedException ex) {
 					Thread.currentThread().interrupt();
 				}
+				catch (Exception e1) {
+					System.out.println("Could not make output file public.");
+				} 
 			}
 		}
 		return client.getResourceUrl(BucketName.OUTPUT.toString(), video.getObjectKey());
@@ -187,5 +194,12 @@ public class BucketManager {
 
 	public static void deleteInputFile(Video video) {
 		client.deleteObject(BucketName.INPUT.toString(), video.getObjectKey());
+	}
+	
+	private static boolean isVideo(Video video) throws IOException{
+		//Check if the file is actually a video
+		Tika tika = new Tika();
+		
+		return tika.detect(video).contains("video");
 	}
 }

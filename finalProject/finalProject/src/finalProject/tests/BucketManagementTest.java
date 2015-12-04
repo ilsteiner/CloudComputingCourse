@@ -2,6 +2,8 @@ package finalProject.tests;
 
 import static org.junit.Assert.*;
 
+import java.io.IOException;
+
 import org.junit.AfterClass;
 import org.junit.Test;
 
@@ -48,7 +50,11 @@ public class BucketManagementTest {
 		Video testVideo = new Video(filePath);
 		assertTrue("File at '" + filePath + "' should exist",testVideo.canRead());
 		
-		testVideo.upload();
+		try {
+			testVideo.upload();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
 		assertTrue(BucketManager.fileExists(testVideo.getObjectKey()));
 	}
@@ -60,7 +66,11 @@ public class BucketManagementTest {
 		Video testVideo = new Video(filePath);
 		assertTrue("File at '" + filePath + "' should exist",testVideo.canRead());
 		
-		testVideo.upload();
+		try {
+			testVideo.upload();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
 		assertTrue(BucketManager.fileExists(testVideo.getObjectKey()));
 		
@@ -74,7 +84,11 @@ public class BucketManagementTest {
 		BucketManager.createInputBucket();
 		Video testVideo1 = new Video("./src/finalProject/tests/resources/clouds.mp4");
 		
-		testVideo1.upload();
+		try {
+			testVideo1.upload();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
 		Video testVideo2 = new Video("./src/finalProject/tests/resources/clouds.mp4");
 		
