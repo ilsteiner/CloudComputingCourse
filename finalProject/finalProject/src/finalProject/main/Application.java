@@ -26,7 +26,8 @@ public class Application {
 				System.out.println("Processing complete!");
 				video.deleteInputFile();
 				video.clearQueue();
-				System.out.println("New file saved: " + video.getOutput(filePath));
+				System.out.println("New file available: " + video.getOutputURL());
+				System.out.println("Program complete");
 				break;
 			}
 			
@@ -36,6 +37,7 @@ public class Application {
 			
 			for(String error : video.getError()){
 				System.out.println(error);
+				System.out.println("Program terminated");
 				break;
 			}
 			
