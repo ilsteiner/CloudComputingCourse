@@ -8,7 +8,7 @@ import com.amazonaws.services.s3.model.PutObjectResult;
 public class Application {
 	public static void main(String[] args) {
 		String filePath = args[0];
-		
+
 		Video video = new Video(filePath);
 		
 		setup();
@@ -25,9 +25,9 @@ public class Application {
 			if(video.getComplete().size() > 0){
 				System.out.println("Processing complete!");
 				video.deleteInputFile();
-				video.clearQueue();
+				video.clearQueues();
 				System.out.println("New file available: " + video.getOutputURL());
-				System.out.println("Program complete");
+				System.out.println("Complete!");
 				break;
 			}
 			
@@ -36,8 +36,9 @@ public class Application {
 			}
 			
 			for(String error : video.getError()){
-				System.out.println(error);
-				System.out.println("Program terminated");
+				System.out.println("Error while transcoding. Program terminated.");
+				video.deleteInputFile();
+				video.clearQueues();
 				break;
 			}
 			

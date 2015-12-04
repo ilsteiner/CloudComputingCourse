@@ -3,13 +3,10 @@ package finalProject.main;
 import java.io.File;
 import java.util.List;
 
-import javax.validation.constraints.NotNull;
-
 import com.amazonaws.services.elastictranscoder.model.CreateJobResult;
 import com.amazonaws.services.s3.model.PutObjectResult;
 
 public class Video extends File {
-	@NotNull
 	private static final long serialVersionUID = -3812260948436342366L;
 	private long id;
 	private String objectKey;
@@ -56,8 +53,8 @@ public class Video extends File {
 		return NotificationManager.getWarning(this);
 	}
 
-	public void clearQueue() {
-		NotificationManager.clearQueue(this);
+	public void clearQueues() {
+		NotificationManager.clearQueues(this);
 	}
 
 	public void deleteInputFile() {

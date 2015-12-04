@@ -140,7 +140,7 @@ public class NotificationManager {
 		return pollQueue(video,warning);
 	}
 
-	public static void clearQueue(Video video) {
+	public static void clearQueues(Video video) {
 		while(getProgress(video).size() > 0);
 		while(getError(video).size() > 0);
 		while(getComplete(video).size() > 0);
