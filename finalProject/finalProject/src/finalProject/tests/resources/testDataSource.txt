@@ -1,4 +1,2 @@
 Source of test data:
 https://vimeo.com/groups/freehd
-
-MVC tutorial: http://crunchify.com/simplest-spring-mvc-hello-world-example-tutorial-spring-model-view-controller-tips/

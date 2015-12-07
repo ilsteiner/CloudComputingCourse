@@ -10,8 +10,14 @@ import com.amazonaws.services.sns.model.Topic;
 
 import finalProject.main.NotificationManager;
 
+/**
+ * Test NotificationManager class.
+ */
 public class NotificationManagementTest {
 	
+	/**
+	 * Tests that topics are created.
+	 */
 	@SuppressWarnings("serial")
 	@Test
 	public void CreateTopics_TopicsCreated(){

@@ -1,6 +1,10 @@
 package finalProject.main;
 
+/**
+ * Valid Bucket names.
+ */
 public enum BucketName {
+	
 	INPUT,OUTPUT,THUMBNAILS;
 	
 	@Override

@@ -8,13 +8,22 @@ import com.amazonaws.services.elastictranscoder.model.Pipeline;
 
 import finalProject.main.PipelineManager;
 
+/**
+ * Test the PipelineManager class.
+ */
 public class PipelineManagementTest {
 
+	/**
+	 * Tests that the main Pipeline is created.
+	 */
 	@Test
 	public void CreatePipeline_SingleMethodCall_OnePipelineCreated() {
 		assertNotNull(PipelineManager.createMainPipeline());
 	}
 	
+	/**
+	 * Call createMainPipeline() multiple times, ensure only one is created.
+	 */
 	@Test
 	public void CreatePipeLine_MultipleMethodCall_OnePipelineCreated() {
 		PipelineManager.createMainPipeline();

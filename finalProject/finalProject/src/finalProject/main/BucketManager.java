@@ -21,13 +21,14 @@ import com.amazonaws.services.s3.model.S3ObjectSummary;
 
 public class BucketManager {
 	private static final Region region = Region.getRegion(Regions.US_EAST_1);
-	private static final AmazonS3Client client = new AmazonS3Client(new ProfileCredentialsProvider("finalProject"))
+	private static final AmazonS3Client client = new AmazonS3Client(new ProfileCredentialsProvider(PipelineManager.username))
 			.withRegion(region);
 
-	public BucketManager() {
-		// TODO Auto-generated constructor stub
-	}
-
+	/**
+	 * Creates the specified bucket if it does not exist
+	 * @param bucketName enum corresponding to a valid bucket name
+	 * @return the URL of the bucket
+	 */
 	private static String createBucket(Enum<BucketName> bucketName) {
 		String name = bucketName.toString();
 		if (!client.doesBucketExist(name)) {
@@ -156,8 +157,7 @@ public class BucketManager {
 	 * Format length in Bytes to human-readable format. Source:
 	 * https://stackoverflow.com/a/5599842
 	 * 
-	 * @param size
-	 *            file size in bytes
+	 * @param size file size in bytes
 	 * @return string representing file format
 	 */
 	public static String readableFileSize(long size) {

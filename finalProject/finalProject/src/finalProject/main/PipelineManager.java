@@ -1,6 +1,9 @@
 package finalProject.main;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.util.List;
+import java.util.Properties;
 
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.services.elastictranscoder.AmazonElasticTranscoderClient;
@@ -12,15 +15,28 @@ import com.amazonaws.services.elastictranscoder.model.CreatePipelineResult;
 import com.amazonaws.services.elastictranscoder.model.JobInput;
 import com.amazonaws.services.elastictranscoder.model.Pipeline;
 
+/**
+ * Methods to create and manage the transcoder pipeline.
+ */
 public class PipelineManager {
+	
+	/** The name of the pipeline. */
 	public static final String name = "MainPipeline";
+	
+	/** The role the transcoder client will operate under. */
 	public static final String role = "arn:aws:iam::101517482224:role/Elastic_Transcoder_Default_Role";
-	public static final AmazonElasticTranscoderClient transcoder = new AmazonElasticTranscoderClient(new ProfileCredentialsProvider("finalProject"));
+	
+	/** The username to use when accessing AWS resources **/
+	public static final String username = "finalProject";
+	
+	/** The transcoder client. */
+	public static final AmazonElasticTranscoderClient transcoder = new AmazonElasticTranscoderClient(new ProfileCredentialsProvider(username));
 
-	public PipelineManager() {
-		// TODO Auto-generated constructor stub
-	}
-
+	/**
+	 * Creates the main pipeline.
+	 *
+	 * @return the pipeline
+	 */
 	public static Pipeline createMainPipeline(){	
 		Pipeline returnPipeline = null;
 		
@@ -48,10 +64,22 @@ public class PipelineManager {
 		return returnPipeline;
 	}
 	
+	/**
+	 * Gets the all pipelines.
+	 *
+	 * @return the pipelines
+	 */
 	public static List<Pipeline> getPipelines(){		
 		return transcoder.listPipelines().getPipelines();
 	}
 	
+	/**
+	 * Creates a job to transcode the specified Video.
+	 *
+	 * @param video the Video to transcode
+	 * @param preset an enum representing a valid transcoding preset
+	 * @return the job result
+	 */
 	public static CreateJobResult createJob(Video video,Preset preset){
 		JobInput input = new JobInput().withKey(video.getObjectKey());
 		CreateJobOutput output = new CreateJobOutput().withKey(video.getObjectKey()).withPresetId(preset.getId());

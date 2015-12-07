@@ -11,8 +11,14 @@ import finalProject.main.BucketManager;
 import finalProject.main.BucketName;
 import finalProject.main.Video;
 
+/**
+ * Testing the BuckerManager class.
+ */
 public class BucketManagementTest {
 
+	/**
+	 * Tests that buckets are created.
+	 */
 	@Test
 	public void CreateBuckets_BucketsCreated() {
 		BucketManager.destroyInputBucket();
@@ -32,6 +38,9 @@ public class BucketManagementTest {
 		assertTrue(BucketName.THUMBNAILS.toString()+ " bucket should exist",BucketManager.bucketExists(BucketName.THUMBNAILS));
 	}
 	
+	/**
+	 * Tests that buckets are destroyed.
+	 */
 	@Test
 	public void DestroyBuckets_BothBucketsDestroyed() {
 		BucketManager.destroyInputBucket();
@@ -43,6 +52,9 @@ public class BucketManagementTest {
 		assertFalse(BucketName.THUMBNAILS.toString() + " bucket should not exist",BucketManager.bucketExists(BucketName.THUMBNAILS));
 	}
 	
+	/**
+	 * Tests that files can be added to the Input bucket.
+	 */
 	@Test
 	public void AddFileToInputBucket_FileAddedToInputBucket() {
 		BucketManager.createInputBucket();
@@ -59,8 +71,11 @@ public class BucketManagementTest {
 		assertTrue(BucketManager.fileExists(testVideo.getObjectKey()));
 	}
 	
+	/**
+	 * Tests that all files are removed from the Input bucket.
+	 */
 	@Test
-	public void ClearBuckets_BucketsClearedOfFiles() {
+	public void ClearInputBucket_BucketClearedOfFiles() {
 		BucketManager.createInputBucket();
 		String filePath = "./src/finalProject/tests/resources/clouds.mp4";
 		Video testVideo = new Video(filePath);
@@ -79,6 +94,9 @@ public class BucketManagementTest {
 		assertFalse(BucketManager.fileExists(testVideo.getObjectKey()));
 	}
 	
+	/**
+	 * Tests that generated input file IDs are unique..
+	 */
 	@Test
 	public void GetNextInputFileID_NextInputFileIDReturned() {
 		BucketManager.createInputBucket();
@@ -97,6 +115,9 @@ public class BucketManagementTest {
 		assertFalse("IDs should be different",testVideo1.getObjectKey().equals(testVideo2.getObjectKey()));
 	}
 	
+	/**
+	 * Reset buckets are tests.
+	 */
 	@AfterClass
 	public static void ResetBuckets() {		
 		BucketManager.createAllBuckets();

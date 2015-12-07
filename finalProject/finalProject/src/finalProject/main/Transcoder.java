@@ -2,7 +2,18 @@ package finalProject.main;
 
 import java.io.IOException;
 
+/**
+ * CLI interface for the project.
+ */
 public class Transcoder {
+	
+	/**
+	 * This is a CLI interface for this project.
+	 *
+	 * @param filePath a String representing a filepath to a valid video file
+	 * @param format a String (GIF,HTML5) representing the format to which 
+	 * 		  the video should be transcoded
+	 */
 	public static void main(String[] args) {
 		String filePath = args[0];
 		String transcodeFormat = null;
@@ -70,6 +81,9 @@ public class Transcoder {
 		}
 	}
 	
+	/**
+	 * Setup to run the application.
+	 */
 	private static void setup(){
 		PipelineManager.createMainPipeline();
 		BucketManager.createAllBuckets();

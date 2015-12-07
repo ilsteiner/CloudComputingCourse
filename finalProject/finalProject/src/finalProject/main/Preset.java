@@ -1,8 +1,17 @@
 package finalProject.main;
 
+/**
+ * Valid preset names and their AWS ids.
+ */
 public enum Preset {
-GIF,HTML5;
+
+	GIF,HTML5;
 	
+	/**
+	 * Gets the AWS preset id.
+	 *
+	 * @return the id of the preset
+	 */
 	public String getId(){
 		switch (this) {
 		case GIF:
