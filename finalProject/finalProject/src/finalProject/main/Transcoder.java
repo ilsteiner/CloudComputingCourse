@@ -27,6 +27,7 @@ public class Transcoder {
 		else{
 			System.out.println("Invalid transcode format, valid formats are: " + Preset.HTML5.toString() + "," + Preset.GIF.toString());
 			System.out.println("Program terminated");
+			return;
 		}
 		
 		if(!transcodeFormat.equals(null)){
@@ -35,9 +36,15 @@ public class Transcoder {
 			setup();
 			
 			try {
+				if(!video.isVideo()){
+					System.out.println("Invalid file");
+					System.out.println("Program terminated");
+					return;
+				}
 				video.upload();
 			} catch (IOException e) {
 				System.out.println("Video file not found");
+				return;
 			}
 			
 			String fileSize = BucketManager.readableFileSize(video.length());

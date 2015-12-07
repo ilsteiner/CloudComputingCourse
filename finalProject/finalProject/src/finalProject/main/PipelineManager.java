@@ -1,10 +1,6 @@
 package finalProject.main;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.util.List;
-import java.util.Properties;
-
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.services.elastictranscoder.AmazonElasticTranscoderClient;
 import com.amazonaws.services.elastictranscoder.model.CreateJobOutput;

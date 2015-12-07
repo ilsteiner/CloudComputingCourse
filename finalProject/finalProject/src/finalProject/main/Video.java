@@ -122,4 +122,13 @@ public class Video extends File {
 	public String getOutputURL(){
 		return BucketManager.getOutputURL(this);
 	}
+	
+	/**
+	 * Checks if this file points to a valid video
+	 * @return boolean true if valid, false otherwise
+	 * @throws IOException if file not found
+	 */
+	public boolean isVideo() throws IOException{
+		return BucketManager.isVideo(this);
+	}
 }

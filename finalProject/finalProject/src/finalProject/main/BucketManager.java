@@ -196,7 +196,7 @@ public class BucketManager {
 		client.deleteObject(BucketName.INPUT.toString(), video.getObjectKey());
 	}
 	
-	private static boolean isVideo(Video video) throws IOException{
+	public static boolean isVideo(Video video) throws IOException{
 		//Check if the file is actually a video
 		Tika tika = new Tika();
 		
