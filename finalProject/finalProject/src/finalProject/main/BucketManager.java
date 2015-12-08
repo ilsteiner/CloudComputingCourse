@@ -19,9 +19,8 @@ import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class BucketManager.
+ * Methods to create and manage buckets.
  */
 public class BucketManager {
 	
