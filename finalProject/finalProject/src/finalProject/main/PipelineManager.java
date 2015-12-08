@@ -49,9 +49,7 @@ public class PipelineManager {
 			request.setOutputBucket(BucketName.OUTPUT.toString());
 			request.setRole(role);
 			request.setNotifications(NotificationManager.getNotifications());
-			
-			//Can't figure out how to properly set the thumbnail bucket
-			//request.setThumbnailConfig(new PipelineOutputConfig().withBucket(BucketName.THUMBNAILS.toString()).withStorageClass("ReducedRedundancy"));		
+					
 			CreatePipelineResult result = transcoder.createPipeline(request);
 			
 			returnPipeline = result.getPipeline();
